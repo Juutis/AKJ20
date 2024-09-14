@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e4f16ff6c4c89c345a4f23bb6af1e001
+guid: 984ec3a5ea8d1084a84dc7189c6a01c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2174827668884051896
-    second: bottle_0
+      213: -5269499136761227205
+    second: mouse1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,11 +46,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
-  alignment: 9
-  spritePivot: {x: 0.5011539, y: 0.068478234}
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bottle_0
+      name: mouse1_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 6
-        width: 30
-        height: 56
+        x: 15
+        y: 1
+        width: 35
+        height: 61
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 848a97402c571d1e0800000000000000
-      internalID: -2174827668884051896
+      spriteID: b389e11447afed6b0800000000000000
+      internalID: -5269499136761227205
       vertices: []
       indices: 
       edges: []
@@ -151,8 +151,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bottle_0: -2174827668884051896
+      mouse1_0: -5269499136761227205
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

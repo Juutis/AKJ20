@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 
 public class SaloonBottle : MonoBehaviour
@@ -14,9 +15,19 @@ public class SaloonBottle : MonoBehaviour
 
     private bool isHighlighted = false;
     private bool isCaught = false;
+    private bool isFailing = false;
 
     public bool IsCaught { get { return isCaught; } }
     public bool IsHighlighted { get { return isHighlighted; } }
+
+    [SerializeField]
+    private float moveDuration = 0.4f;
+    private Vector3 startPos;
+    private Vector3 targetPos;
+
+    private float moveTimer = 0f;
+
+    private bool isMoving = false;
 
     void Start()
     {
@@ -33,18 +44,40 @@ public class SaloonBottle : MonoBehaviour
         isCaught = true;
     }
 
-    public void Hide()
+    public void AnimateCatch(Transform target)
     {
-        bottleContainer.gameObject.SetActive(false);
+        isMoving = true;
+        startPos = transform.position;
+        targetPos = target.position;
+        moveTimer = 0f;
     }
     public void Kill()
+    {
+        isFailing = true;
+        animator.Play("bottleFail");
+    }
+
+    public void AfterFail()
     {
         Destroy(gameObject);
     }
 
     void Update()
     {
-        if (isCaught)
+        if (isMoving)
+        {
+            moveTimer += Time.deltaTime;
+            float moveDelta = moveTimer / moveDuration;
+            transform.position = Vector3.Lerp(startPos, targetPos, moveDelta);
+            if (moveDelta >= 1f)
+            {
+                transform.position = targetPos;
+                bottleContainer.gameObject.SetActive(false);
+                isMoving = false;
+            }
+            return;
+        }
+        if (isCaught || isFailing)
         {
             return;
         }

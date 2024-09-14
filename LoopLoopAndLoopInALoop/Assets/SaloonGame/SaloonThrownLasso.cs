@@ -13,8 +13,6 @@ public class SaloonThrownLasso : MonoBehaviour
     [SerializeField]
     private SaloonLassoRope rope;
 
-    private SaloonBottle bottle;
-
     private bool isThrowing = false;
     private bool isHolding = false;
 
@@ -34,7 +32,7 @@ public class SaloonThrownLasso : MonoBehaviour
     private float maxDistance = 0.5f;
 
     public bool IsFinished { get { return !isThrowing && !isHolding; } }
-    public bool BottleWasHit
+    public bool TargetWasHit
     {
         get
         {
@@ -44,7 +42,6 @@ public class SaloonThrownLasso : MonoBehaviour
                 return false;
             }
             float distance = Vector2.Distance(movingTransform.transform.position, targetPosition);
-            Debug.Log($"Distance: {distance} < {maxDistance}");
             if (distance < maxDistance)
             {
                 return true;
@@ -64,14 +61,13 @@ public class SaloonThrownLasso : MonoBehaviour
         movingTransform.gameObject.SetActive(false);
     }
 
-    public void Throw(SaloonBottle targetBottle)
+    public void Throw(Vector3 targetPos)
     {
         isThrowing = true;
-        bottle = targetBottle;
         movingTransform.transform.position = startPosition.position;
         movingTransform.gameObject.SetActive(true);
         startingPosition = movingTransform.position;
-        targetPosition = bottle.transform.position;
+        targetPosition = targetPos;
         throwTimer = 0f;
         rope.Reset();
         rope.Move(bottomPoint);
