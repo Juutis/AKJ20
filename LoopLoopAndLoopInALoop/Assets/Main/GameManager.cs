@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     private int totalLoops = 5;
     private int currentLoop = 0;
 
+    [SerializeField]
+    private GameObject winGameScreen;
+
     void Awake()
     {
         if (Instance != null) {
@@ -76,6 +79,7 @@ public class GameManager : MonoBehaviour
             if (currentLoop >= totalLoops)
             {
                 Debug.Log("ROLL CREDITS");
+                winGameScreen.SetActive(true);
                 return;
             }
         }
