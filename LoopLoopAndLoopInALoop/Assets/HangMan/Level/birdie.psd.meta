@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d285bfbb9531bda4295ed028b6bc6696
+guid: 5ab1ea3e4ff0b434892b544a77f87b61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6178082459753361348
-    second: GunBack_0
+      213: 5452093344280487736
+    second: birdie_0
+  - first:
+      213: -8429791961049224647
+    second: birdie_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GunBack_0
+      name: birdie_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 5
+        y: 49
+        width: 13
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +144,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4cfaba6a345fcb550800000000000000
-      internalID: 6178082459753361348
+      spriteID: 8372c1c920ab9ab40800000000000000
+      internalID: 5452093344280487736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birdie_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 49
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93aa737dfdc530b80800000000000000
+      internalID: -8429791961049224647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birdie_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 49
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36352cbef225ce04183c1990dfbe4ac7
+      internalID: -172479224
       vertices: []
       indices: 
       edges: []
@@ -151,7 +198,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e2993c88fe80a6d4baf0e0ed4e97f454
+    spriteID: 48f02a3a9aaadfa4f953524eaea37570
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +208,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GunBack_0: 6178082459753361348
+      birdie_0: 5452093344280487736
+      birdie_1: -8429791961049224647
+      birdie_2: -172479224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

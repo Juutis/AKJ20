@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d285bfbb9531bda4295ed028b6bc6696
+guid: 10ce08b707b4afd4499e8d303fcac96d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6178082459753361348
-    second: GunBack_0
+      213: -1955448553306655712
+    second: Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GunBack_0
+      name: Background_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4cfaba6a345fcb550800000000000000
-      internalID: 6178082459753361348
+      spriteID: 024fa93b6e9dcd4e0800000000000000
+      internalID: -1955448553306655712
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e2993c88fe80a6d4baf0e0ed4e97f454
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GunBack_0: 6178082459753361348
+      Background_0: -1955448553306655712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
