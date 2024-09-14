@@ -20,12 +20,15 @@ public class HangingManGun : MonoBehaviour
     [SerializeField]
     Transform shootTarget;
 
+    int ropeLayerMask;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Invoke("RandomizeHeading", 0.0f);
+        ropeLayerMask = LayerMask.GetMask("HangingManRope");
     }
 
     // Update is called once per frame
@@ -63,6 +66,10 @@ public class HangingManGun : MonoBehaviour
                 lastFired = Time.time;
                 var newBoom = Instantiate(boom);
                 newBoom.transform.position = shootTarget.position;
+                var hit = Physics2D.Raycast(shootTarget.position, Vector2.zero, Mathf.Infinity, ropeLayerMask);
+                if (hit.collider != null) {
+                    Debug.Log("YOU WIN");
+                }
             }
         }
     }

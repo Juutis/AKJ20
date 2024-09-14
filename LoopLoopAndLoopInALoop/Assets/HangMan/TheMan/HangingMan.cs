@@ -40,7 +40,7 @@ public class HangingMan : MonoBehaviour
         }
         if (Time.time - failTimer > 0.3f) {
             Destroy(gameObject);
-            Debug.Log("LOSE");
+            Debug.Log("YOU LOSE");
         }
     }
 
