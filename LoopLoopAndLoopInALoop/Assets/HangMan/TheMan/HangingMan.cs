@@ -36,7 +36,7 @@ public class HangingMan : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        Invoke("RandomizeHeading", 2.5f);
+        Invoke("RandomizeHeading", 3.0f);
         ropeOrigColor = rope.color;
     }
 
@@ -69,7 +69,7 @@ public class HangingMan : MonoBehaviour
             rope.color = ropeOrigColor;
         }
 
-        if (ropeIndicator) {
+        if (ropeIndicator && !inActive) {
             var ct = Mathf.Sin((Time.time - ropeIndicatorTimer) * 5.0f);
             var c = Color.Lerp(ropeOrigColor, ropeIndicatorColor, ct);
             rope.color = c;
@@ -78,9 +78,9 @@ public class HangingMan : MonoBehaviour
 
     public void RandomizeHeading() {
         lastHeading = currentHeading;
-        targetHeading = Random.Range(-1.0f, 1.0f) * 5.0f;
+        targetHeading = Random.Range(-1.0f, 1.0f) * Mathf.Lerp(1.0f, 5.0f, HangManManager.Instance.Difficulty);
         headingTimer = Time.time;
-        Invoke("RandomizeHeading", 0.25f);
+        Invoke("RandomizeHeading", Random.Range(0.6f, 1.0f) * Mathf.Lerp(0.4f, 0.2f, HangManManager.Instance.Difficulty));
     }
 
     public void Free() {
@@ -92,10 +92,15 @@ public class HangingMan : MonoBehaviour
         chair.simulated = true;
         anim.enabled = false;
         man.AddTorque(Random.Range(-1.0f, 1.0f), ForceMode2D.Impulse);
+        Invoke("Win", 3.0f);
     }
 
     public void ShowRopeIndicator() {
         ropeIndicator = true;
         ropeIndicatorTimer = Time.time;
+    }
+
+    public void Win() {
+        GameManager.Instance.LoadNextLevel();
     }
 }

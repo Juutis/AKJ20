@@ -40,7 +40,7 @@ public class HangingManGun : MonoBehaviour
         Cursor.visible = false;
         Invoke("RandomizeHeading", 0.0f);
         ropeLayerMask = LayerMask.GetMask("HangingManRope");
-        Invoke("Activate", 1.0f);
+        Invoke("Activate", 10.0f);
         hMan = FindAnyObjectByType<HangingMan>();
     }
 
@@ -63,7 +63,7 @@ public class HangingManGun : MonoBehaviour
                 controllable = true;
             }
         }
-        transform.position += (Vector3)currentHeading * Time.deltaTime * 1.3f;
+        transform.position += (Vector3)currentHeading * Time.deltaTime * Mathf.Lerp(1.0f, 4.0f, HangManManager.Instance.Difficulty);
         
         if(controllable) {
             var clampedX = Mathf.Clamp(transform.position.x, -3, 3);
@@ -81,7 +81,7 @@ public class HangingManGun : MonoBehaviour
         var clampedTargetPosy = Mathf.Clamp(targetPosition.y, idealTargetPosition.y - maxTargetPosOffset, idealTargetPosition.y + maxTargetPosOffset);
         targetPosition = new Vector3(clampedTargetPosX, clampedTargetPosy, targetPosition.z);
 
-        var finalTargePos = targetPosition + (Vector3)targetOffset * 0.02f;
+        var finalTargePos = targetPosition + (Vector3)targetOffset * Mathf.Lerp(0.02f, 0.03f, HangManManager.Instance.Difficulty);
         transform.LookAt(finalTargePos);
 
         if (Input.GetKeyDown(KeyCode.Mouse0)) {

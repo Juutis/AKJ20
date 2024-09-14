@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 72a7a965b07ed4f4bb05805e13b56cac
+guid: 711b2609f3bf9174890323e20fc3ee79
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 729595213129426376
-    second: walldark1_0
+      213: 4538383608324515778
+    second: tighteningLasso_bubu_0
+  - first:
+      213: 3682840815162360798
+    second: tighteningLasso_bubu_1
+  - first:
+      213: -1670287156621159948
+    second: tighteningLasso_bubu_2
+  - first:
+      213: -709060219850103034
+    second: tighteningLasso_bubu_3
+  - first:
+      213: -7467351946995126734
+    second: tighteningLasso_bubu_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walldark1_0
+      name: tighteningLasso_bubu_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
+        x: 40
+        y: 849
+        width: 176
+        height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +153,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c5a7641bfa002a00800000000000000
-      internalID: 729595213129426376
+      spriteID: 2c763aca8d39bfe30800000000000000
+      internalID: 4538383608324515778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tighteningLasso_bubu_1
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 830
+        width: 153
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3001875341c1330800000000000000
+      internalID: 3682840815162360798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tighteningLasso_bubu_2
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 806
+        width: 141
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f1d2bc3ea2f1d8e0800000000000000
+      internalID: -1670287156621159948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tighteningLasso_bubu_3
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 789
+        width: 100
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607697f9c79e826f0800000000000000
+      internalID: -709060219850103034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tighteningLasso_bubu_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 513
+        width: 92
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ea88ac7f2ae5890800000000000000
+      internalID: -7467351946995126734
       vertices: []
       indices: 
       edges: []
@@ -161,11 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tighteningLasso_bu_0: 6541868446857774395
-      tighteningLasso_bu_1: -1314313255406490120
-      tighteningLasso_bu_2: -4521075752349408254
-      tighteningLasso_bu_3: -392320017614553391
-      tighteningLasso_bu_4: -8775790494205336039
+      tighteningLasso_bubu_0: 4538383608324515778
+      tighteningLasso_bubu_1: 3682840815162360798
+      tighteningLasso_bubu_2: -1670287156621159948
+      tighteningLasso_bubu_3: -709060219850103034
+      tighteningLasso_bubu_4: -7467351946995126734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
