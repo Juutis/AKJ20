@@ -22,6 +22,17 @@ public class HangingManGun : MonoBehaviour
 
     int ropeLayerMask;
 
+    bool controllable = false;
+    bool active = false;
+    
+    [SerializeField]
+    private Transform moveTo;
+
+    [SerializeField]
+    private GameObject birbs;
+
+    private HangingMan hMan;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,23 +40,36 @@ public class HangingManGun : MonoBehaviour
         Cursor.visible = false;
         Invoke("RandomizeHeading", 0.0f);
         ropeLayerMask = LayerMask.GetMask("HangingManRope");
+        Invoke("Activate", 1.0f);
+        hMan = FindAnyObjectByType<HangingMan>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!active) return;
         var t = Time.time - headingTimer;
         t = Mathf.Clamp01(t);
         currentHeading = Vector2.Lerp(lastHeading, targetHeading, t);
 
-        var inputX = Input.GetAxis("HangingManMouse X");
-        var inputY = Input.GetAxis("HangingManMouse Y");
-        var input = new Vector2(inputX, inputY) * 0.1f;
-        transform.position = transform.position + (Vector3)input + (Vector3)currentHeading * Time.deltaTime * 1.3f;
+        if (controllable) {
+            var inputX = Input.GetAxis("HangingManMouse X");
+            var inputY = Input.GetAxis("HangingManMouse Y");
+            var input = new Vector2(inputX, inputY) * 0.1f;
+            transform.position = transform.position + (Vector3)input;
+        } else {
+            transform.position = Vector3.MoveTowards(transform.position, moveTo.position, 5 * Time.deltaTime);
+            if (Vector3.Distance(transform.position, moveTo.position) < 0.1f) {
+                controllable = true;
+            }
+        }
+        transform.position += (Vector3)currentHeading * Time.deltaTime * 1.3f;
         
-        var clampedX = Mathf.Clamp(transform.position.x, -3, 3);
-        var clampedY = Mathf.Clamp(transform.position.y, -3, 3);
-        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+        if(controllable) {
+            var clampedX = Mathf.Clamp(transform.position.x, -3, 3);
+            var clampedY = Mathf.Clamp(transform.position.y, -3, 3);
+            transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+        }
 
         var idealTargetPosition = transform.position + Vector3.forward;
 
@@ -59,7 +83,6 @@ public class HangingManGun : MonoBehaviour
 
         var finalTargePos = targetPosition + (Vector3)targetOffset * 0.02f;
         transform.LookAt(finalTargePos);
-        Debug.DrawLine(transform.position, targetPosition);
 
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
             if (lastFired < Time.time - 0.2f) {
@@ -68,9 +91,9 @@ public class HangingManGun : MonoBehaviour
                 newBoom.transform.position = shootTarget.position;
                 var hit = Physics2D.Raycast(shootTarget.position, Vector2.zero, Mathf.Infinity, ropeLayerMask);
                 if (hit.collider != null) {
-                    var hMan = hit.collider.transform.GetComponentInParent<HangingMan>();
                     hMan.Free();
                 }
+                birbs.SetActive(true);
             }
         }
     }
@@ -80,5 +103,10 @@ public class HangingManGun : MonoBehaviour
         targetHeading = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
         headingTimer = Time.time;
         Invoke("RandomizeHeading", 0.5f);
+    }
+
+    public void Activate() {
+        active = true;
+        hMan.ShowRopeIndicator();
     }
 }

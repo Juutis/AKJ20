@@ -74,6 +74,7 @@ MonoBehaviour:
   rope: {fileID: 7102374096212149106}
   man: {fileID: 8860272689438388882}
   chair: {fileID: 2125281835426161907}
+  ropeIndicatorColor: {r: 0.6603774, g: 0.012948576, b: 0, a: 1}
 --- !u!1 &4459601950925459703
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +307,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 8662384261516989540, guid: 690ec1e252bcb7144aa481a7bc1788c3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.12941177, g: 0.14509805, b: 0.16078432, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -603,7 +604,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.08
+      scalar: 0.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -656,7 +657,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2

@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using UnityEngine;
 
 public class HangingMan : MonoBehaviour
@@ -22,13 +23,20 @@ public class HangingMan : MonoBehaviour
 
     [SerializeField]
     private Rigidbody2D chair;
+
+    private bool ropeIndicator = false;
+    private float ropeIndicatorTimer;
+    [SerializeField]
+    private Color ropeIndicatorColor;
+    private Color ropeOrigColor;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         anim = GetComponent<Animator>();
-        Invoke("RandomizeHeading", 3.0f);
+        Invoke("RandomizeHeading", 2.5f);
+        ropeOrigColor = rope.color;
     }
 
     // Update is called once per frame
@@ -57,12 +65,19 @@ public class HangingMan : MonoBehaviour
             var dieAnim = balance > 0 ? "die_right" : "die_left";
             anim.Play(dieAnim);
             inActive = true;
+            rope.color = ropeOrigColor;
+        }
+
+        if (ropeIndicator) {
+            var ct = Mathf.Sin((Time.time - ropeIndicatorTimer) * 5.0f);
+            var c = Color.Lerp(ropeOrigColor, ropeIndicatorColor, ct);
+            rope.color = c;
         }
     }
 
     public void RandomizeHeading() {
         lastHeading = currentHeading;
-        targetHeading = Random.Range(-1.0f, 1.0f) * 3.0f;
+        targetHeading = Random.Range(-1.0f, 1.0f) * 5.0f;
         headingTimer = Time.time;
         Invoke("RandomizeHeading", 0.25f);
     }
@@ -76,5 +91,10 @@ public class HangingMan : MonoBehaviour
         chair.simulated = true;
         anim.enabled = false;
         man.AddTorque(Random.Range(-1.0f, 1.0f), ForceMode2D.Impulse);
+    }
+
+    public void ShowRopeIndicator() {
+        ropeIndicator = true;
+        ropeIndicatorTimer = Time.time;
     }
 }
