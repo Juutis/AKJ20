@@ -9,7 +9,19 @@ public class HangingMan : MonoBehaviour
     private float headingTimer = 0;
     private Animator anim;
     private float failTimer = 0;
-    private bool dead = false;
+    private bool inActive = false;
+
+    [SerializeField]
+    private ParticleSystem ropeGone;
+
+    [SerializeField]
+    private SpriteRenderer rope;
+
+    [SerializeField]
+    private Rigidbody2D man;
+
+    [SerializeField]
+    private Rigidbody2D chair;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,8 +34,8 @@ public class HangingMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dead) return;
-        
+        if (inActive) return;
+
         var t = Time.time - headingTimer;
         t = Mathf.Clamp01(t);
         currentHeading = Mathf.Lerp(lastHeading, targetHeading, t);
@@ -44,7 +56,7 @@ public class HangingMan : MonoBehaviour
         if (Time.time - failTimer > 0.3f) {
             var dieAnim = balance > 0 ? "die_right" : "die_left";
             anim.Play(dieAnim);
-            dead = true;
+            inActive = true;
         }
     }
 
@@ -53,5 +65,16 @@ public class HangingMan : MonoBehaviour
         targetHeading = Random.Range(-1.0f, 1.0f) * 3.0f;
         headingTimer = Time.time;
         Invoke("RandomizeHeading", 0.25f);
+    }
+
+    public void Free() {
+        if (inActive) return;
+        ropeGone.Play();
+        rope.enabled = false;
+        inActive = true;
+        man.simulated = true;
+        chair.simulated = true;
+        anim.enabled = false;
+        man.AddTorque(Random.Range(-1.0f, 1.0f), ForceMode2D.Impulse);
     }
 }

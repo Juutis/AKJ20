@@ -41,7 +41,7 @@ public class HangingManGun : MonoBehaviour
         var inputX = Input.GetAxis("HangingManMouse X");
         var inputY = Input.GetAxis("HangingManMouse Y");
         var input = new Vector2(inputX, inputY) * 0.1f;
-        transform.position = transform.position + (Vector3)input + (Vector3)currentHeading * Time.deltaTime * 0.1f;
+        transform.position = transform.position + (Vector3)input + (Vector3)currentHeading * Time.deltaTime * 0.3f;
         
         var clampedX = Mathf.Clamp(transform.position.x, -3, 3);
         var clampedY = Mathf.Clamp(transform.position.y, -3, 3);
@@ -68,7 +68,8 @@ public class HangingManGun : MonoBehaviour
                 newBoom.transform.position = shootTarget.position;
                 var hit = Physics2D.Raycast(shootTarget.position, Vector2.zero, Mathf.Infinity, ropeLayerMask);
                 if (hit.collider != null) {
-                    Debug.Log("YOU WIN");
+                    var hMan = hit.collider.transform.GetComponentInParent<HangingMan>();
+                    hMan.Free();
                 }
             }
         }
