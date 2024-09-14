@@ -9,6 +9,7 @@ public class HangingMan : MonoBehaviour
     private float headingTimer = 0;
     private Animator anim;
     private float failTimer = 0;
+    private bool dead = false;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +22,8 @@ public class HangingMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dead) return;
+        
         var t = Time.time - headingTimer;
         t = Mathf.Clamp01(t);
         currentHeading = Mathf.Lerp(lastHeading, targetHeading, t);
@@ -39,8 +42,9 @@ public class HangingMan : MonoBehaviour
             failTimer = Time.time;
         }
         if (Time.time - failTimer > 0.3f) {
-            Destroy(gameObject);
-            Debug.Log("YOU LOSE");
+            var dieAnim = balance > 0 ? "die_right" : "die_left";
+            anim.Play(dieAnim);
+            dead = true;
         }
     }
 
