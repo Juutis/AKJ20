@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private int sceneIndex = 0;
     
-    private int totalLoops = 10;
+    private int totalLoops = 5;
     private int currentLoop = 0;
 
     void Awake()
@@ -69,7 +69,6 @@ public class GameManager : MonoBehaviour
     }
 
     void GoToNextLevel() {
-        FadeIn();
         sceneIndex++;
         if (sceneIndex >= scenes.Count()) {
             sceneIndex = 0;
@@ -77,10 +76,10 @@ public class GameManager : MonoBehaviour
             if (currentLoop >= totalLoops)
             {
                 Debug.Log("ROLL CREDITS");
-                FadeOut();
                 return;
             }
         }
+        FadeIn();
         var difficulty = (float)currentLoop / (totalLoops - 1); // 0.0 = min difficulty, 1.0 = max difficulty
         HangManManager.Instance.Difficulty = difficulty;
         SceneManager.LoadScene(scenes[sceneIndex]);
