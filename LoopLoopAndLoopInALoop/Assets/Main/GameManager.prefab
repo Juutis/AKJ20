@@ -123,9 +123,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curtains: {fileID: 3316092298966806061}
-  scenes:
-  - hangman
+  minigames:
+  - SceneName: hangman
+    WinScreen: 0
   winGameScreen: {fileID: 2772108307068840727}
+  lassoScreen: {fileID: 6259375835109176133}
+  gunScreen: {fileID: 4927154119452575756}
+  boozeScreen: {fileID: 6840233637889538053}
 --- !u!114 &6513323918648187982
 MonoBehaviour:
   m_ObjectHideFlags: 0

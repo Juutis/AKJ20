@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,7 +16,7 @@ public class GameManager : MonoBehaviour
     private float fadeOutTimer = 0;
 
     [SerializeField]
-    private string[] scenes;
+    private MiniGame[] minigames;
 
     private int sceneIndex = 0;
     
@@ -23,6 +25,17 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject winGameScreen;
+
+    [SerializeField]
+    private GameObject lassoScreen;
+
+    [SerializeField]
+    private GameObject gunScreen;
+
+    [SerializeField]
+    private GameObject boozeScreen;
+
+    private bool winScreenActive;
 
     void Awake()
     {
@@ -53,12 +66,19 @@ public class GameManager : MonoBehaviour
             t = Mathf.Clamp01(t);
             curtains.color = Color.Lerp(Color.black, Color.clear, t);
         }
+        if (winScreenActive)
+        {
+            if (Input.anyKeyDown)
+            {
+                GoToNextLevel();
+            }
+        }
     }
 
     public void LoadNextLevel()
     {
         FadeOut();
-        Invoke("GoToNextLevel", fadeDuration);
+        Invoke("DisplayWinScreen", fadeDuration);
     }
 
     public void FadeOut()
@@ -71,21 +91,71 @@ public class GameManager : MonoBehaviour
         fadeInTimer = Time.time + fadeDuration;
     }
 
+    void DisplayWinScreen()
+    {
+        if (sceneIndex == minigames.Count() - 1 && currentLoop == totalLoops - 1) {
+            winGameScreen.SetActive(true);
+            return;
+        }
+        DisplayWinScreenForMiniGame(minigames[sceneIndex]);
+        winScreenActive = true;
+    }
+
+    void HideWinScreen()
+    {
+        foreach (var minigame in minigames)
+        {
+            var winScreen = getWinScreen(minigame.WinScreen);
+            winScreen.SetActive(false);
+        }
+        winScreenActive = false;
+    }
+
     void GoToNextLevel() {
+        HideWinScreen();
         sceneIndex++;
-        if (sceneIndex >= scenes.Count()) {
+        if (sceneIndex >= minigames.Count()) {
             sceneIndex = 0;
             currentLoop++;
-            if (currentLoop >= totalLoops)
-            {
-                Debug.Log("ROLL CREDITS");
-                winGameScreen.SetActive(true);
-                return;
-            }
         }
         FadeIn();
         var difficulty = (float)currentLoop / (totalLoops - 1); // 0.0 = min difficulty, 1.0 = max difficulty
         HangManManager.Instance.Difficulty = difficulty;
-        SceneManager.LoadScene(scenes[sceneIndex]);
+        SceneManager.LoadScene(minigames[sceneIndex].SceneName);
     }
+
+    private void DisplayWinScreenForMiniGame(MiniGame miniGame)
+    {
+        var winScreen = getWinScreen(miniGame.WinScreen);
+        winScreen.SetActive(true);
+    }
+
+    private GameObject getWinScreen(WinScreen winScreen)
+    {
+        switch (winScreen)
+        {
+            case WinScreen.LASSOMAN:
+                return lassoScreen;
+            case WinScreen.GUNMAN:
+                return gunScreen;
+            case WinScreen.BOOZEMAN:
+                return boozeScreen;
+            default:
+                return null;
+        }
+    }
+}
+
+[System.Serializable]
+struct MiniGame
+{
+    public string SceneName;
+    public WinScreen WinScreen;
+}
+
+enum WinScreen
+{
+    GUNMAN,
+    BOOZEMAN,
+    LASSOMAN
 }
