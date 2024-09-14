@@ -1,5 +1,6 @@
 using Mono.Cecil;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HangingMan : MonoBehaviour
 {

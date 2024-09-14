@@ -85,7 +85,7 @@ public class HangingManGun : MonoBehaviour
         transform.LookAt(finalTargePos);
 
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            if (lastFired < Time.time - 0.2f) {
+            if (lastFired < Time.time - 0.8f) {
                 lastFired = Time.time;
                 var newBoom = Instantiate(boom);
                 newBoom.transform.position = shootTarget.position;
