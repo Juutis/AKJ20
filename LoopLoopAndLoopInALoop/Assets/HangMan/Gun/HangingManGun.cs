@@ -41,7 +41,7 @@ public class HangingManGun : MonoBehaviour
         var inputX = Input.GetAxis("HangingManMouse X");
         var inputY = Input.GetAxis("HangingManMouse Y");
         var input = new Vector2(inputX, inputY) * 0.1f;
-        transform.position = transform.position + (Vector3)input + (Vector3)currentHeading * Time.deltaTime * 0.3f;
+        transform.position = transform.position + (Vector3)input + (Vector3)currentHeading * Time.deltaTime * 1.3f;
         
         var clampedX = Mathf.Clamp(transform.position.x, -3, 3);
         var clampedY = Mathf.Clamp(transform.position.y, -3, 3);
@@ -79,6 +79,6 @@ public class HangingManGun : MonoBehaviour
         lastHeading = currentHeading;
         targetHeading = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
         headingTimer = Time.time;
-        Invoke("RandomizeHeading", 0.25f);
+        Invoke("RandomizeHeading", 0.5f);
     }
 }
