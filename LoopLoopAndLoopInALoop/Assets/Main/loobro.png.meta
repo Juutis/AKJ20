@@ -1,5 +1,6 @@
 fileFormatVersion: 2
-guid: 7f4ca2b5e2c04eb4da9dd58ac69676a3
+<<<<<<<< HEAD:LoopLoopAndLoopInALoop/Assets/SaloonGame/Images/target.png.meta
+guid: 8a02f24548a574640b3c468716df9139
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -14,6 +15,14 @@ TextureImporter:
   - first:
       213: -3570031561784051763
     second: target_3
+========
+guid: d6647f6dd95d34c4d96095eb7103444a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2025687325664941669
+    second: loobro_0
+>>>>>>>> 980a9a4bd2513ad90ea3f25c884c264e662ad664:LoopLoopAndLoopInALoop/Assets/Main/loobro.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,6 +144,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:LoopLoopAndLoopInALoop/Assets/SaloonGame/Images/target.png.meta
       name: target_0
       rect:
         serializedVersion: 2
@@ -142,6 +152,15 @@ TextureImporter:
         y: 320
         width: 74
         height: 147
+========
+      name: loobro_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
+>>>>>>>> 980a9a4bd2513ad90ea3f25c884c264e662ad664:LoopLoopAndLoopInALoop/Assets/Main/loobro.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,6 +169,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:LoopLoopAndLoopInALoop/Assets/SaloonGame/Images/target.png.meta
       spriteID: 0c233549f12449ec0800000000000000
       internalID: -3561148701943319872
       vertices: []
@@ -218,6 +238,10 @@ TextureImporter:
       bones: []
       spriteID: dc7bdea9533b47ec0800000000000000
       internalID: -3570031561784051763
+========
+      spriteID: 5661540e3efac1c10800000000000000
+      internalID: 2025687325664941669
+>>>>>>>> 980a9a4bd2513ad90ea3f25c884c264e662ad664:LoopLoopAndLoopInALoop/Assets/Main/loobro.png.meta
       vertices: []
       indices: 
       edges: []
@@ -235,11 +259,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<<< HEAD:LoopLoopAndLoopInALoop/Assets/SaloonGame/Images/target.png.meta
     nameFileIdTable:
       target_0: -3561148701943319872
       target_1: 6526703898722648163
       target_2: 6309007193198944101
       target_3: -3570031561784051763
+========
+    nameFileIdTable: {}
+>>>>>>>> 980a9a4bd2513ad90ea3f25c884c264e662ad664:LoopLoopAndLoopInALoop/Assets/Main/loobro.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

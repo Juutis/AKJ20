@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 7f4ca2b5e2c04eb4da9dd58ac69676a3
+guid: c9b8d296b34171d4e944d0d71774fc82
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3561148701943319872
-    second: target_0
-  - first:
-      213: 6526703898722648163
-    second: target_1
-  - first:
-      213: 6309007193198944101
-    second: target_2
-  - first:
-      213: -3570031561784051763
-    second: target_3
+      213: 2438472446409127675
+    second: loopkiinni_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: target_0
+      name: loopkiinni_0
       rect:
         serializedVersion: 2
-        x: 219
-        y: 320
-        width: 74
-        height: 147
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,74 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c233549f12449ec0800000000000000
-      internalID: -3561148701943319872
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: target_1
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 219
-        width: 147
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 360458dad92839a50800000000000000
-      internalID: 6526703898722648163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: target_2
-      rect:
-        serializedVersion: 2
-        x: 318
-        y: 219
-        width: 149
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 56fd10c9d981e8750800000000000000
-      internalID: 6309007193198944101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: target_3
-      rect:
-        serializedVersion: 2
-        x: 219
-        y: 46
-        width: 74
-        height: 148
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dc7bdea9533b47ec0800000000000000
-      internalID: -3570031561784051763
+      spriteID: bf63bca35c137d120800000000000000
+      internalID: 2438472446409127675
       vertices: []
       indices: 
       edges: []
@@ -226,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      target_0: -3561148701943319872
-      target_1: 6526703898722648163
-      target_2: 6309007193198944101
-      target_3: -3570031561784051763
+      loopkiinni_0: 2438472446409127675
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
