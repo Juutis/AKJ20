@@ -38,7 +38,6 @@ public class HangingMan : MonoBehaviour
         anim = GetComponent<Animator>();
         Invoke("RandomizeHeading", 3.0f);
         ropeOrigColor = rope.color;
-        Debug.Log(HangManManager.Instance.Difficulty);
     }
 
     // Update is called once per frame
@@ -102,7 +101,6 @@ public class HangingMan : MonoBehaviour
     }
 
     public void Win() {
-        HangManManager.Instance.Difficulty += 0.1f;
         GameManager.Instance.LoadNextLevel();
     }
 }
