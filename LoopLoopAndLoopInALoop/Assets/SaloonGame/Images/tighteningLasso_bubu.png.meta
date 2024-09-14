@@ -260,7 +260,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tighteningLasso_bubu_0: 4538383608324515778
+      tighteningLasso_bubu_1: 3682840815162360798
+      tighteningLasso_bubu_2: -1670287156621159948
+      tighteningLasso_bubu_3: -709060219850103034
+      tighteningLasso_bubu_4: -7467351946995126734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
