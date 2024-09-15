@@ -77,6 +77,10 @@ public class SaloonThrownLasso : MonoBehaviour
         throwTimer = 0f;
         rope.Reset();
         rope.Move(bottomPoint);
+        if (SoundManager.main != null)
+        {
+            SoundManager.main.PlaySound(GameSoundType.Throw);
+        }
     }
 
     public void Stop()

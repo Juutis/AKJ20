@@ -29,6 +29,8 @@ public class HangManManager : MonoBehaviour
 
     void Start()
     {
-        Difficulty = GameManager.Instance.GetDifficulty();
+        if (GameManager.Instance != null) {
+            Difficulty = GameManager.Instance.GetDifficulty();
+        }
     }
 }

@@ -29,7 +29,7 @@ public class HangingMan : MonoBehaviour
     [SerializeField]
     private Color ropeIndicatorColor;
     private Color ropeOrigColor;
-    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,53 +58,78 @@ public class HangingMan : MonoBehaviour
         var time = (balance + 1) / 2.0f;
         anim.SetFloat("time", time);
 
-        if (Mathf.Abs(balance) < 0.99f) {
+        if (Mathf.Abs(balance) < 0.99f)
+        {
             failTimer = Time.time;
         }
+
         if (Time.time - failTimer > 0.3f) {
-            var dieAnim = balance > 0 ? "die_right" : "die_left";
-            anim.Play(dieAnim);
+            anim.enabled = false;
+            man.simulated = true;
+            chair.simulated = true;
+            if (balance > 0)
+            {
+                man.AddTorque(100, ForceMode2D.Impulse);
+                chair.AddTorque(-1, ForceMode2D.Impulse);
+            }
+            else
+            {
+                man.AddTorque(-100, ForceMode2D.Impulse);
+                chair.AddTorque(1, ForceMode2D.Impulse);
+            }
+            rope.GetComponent<Rigidbody2D>().simulated = true;
             inActive = true;
             rope.color = ropeOrigColor;
+            if (SoundManager.main != null)
+            {
+                SoundManager.main.PlaySound(GameSoundType.Die);
+            }
             Invoke("Lose", 3.0f);
         }
 
-        if (ropeIndicator && !inActive) {
+        if (ropeIndicator && !inActive)
+        {
             var ct = Mathf.Sin((Time.time - ropeIndicatorTimer) * 5.0f);
             var c = Color.Lerp(ropeOrigColor, ropeIndicatorColor, ct);
             rope.color = c;
         }
     }
 
-    public void RandomizeHeading() {
+    public void RandomizeHeading()
+    {
         lastHeading = currentHeading;
         targetHeading = Random.Range(-1.0f, 1.0f) * Mathf.Lerp(1.0f, 5.0f, HangManManager.Instance.Difficulty);
         headingTimer = Time.time;
         Invoke("RandomizeHeading", Random.Range(0.6f, 1.0f) * Mathf.Lerp(0.4f, 0.2f, HangManManager.Instance.Difficulty));
     }
 
-    public void Free() {
+    public void Free()
+    {
         if (inActive) return;
         ropeGone.Play();
         rope.enabled = false;
         inActive = true;
         man.simulated = true;
+        man.gameObject.GetComponent<HingeJoint2D>().enabled = false;
         chair.simulated = true;
         anim.enabled = false;
-        man.AddTorque(Random.Range(-1.0f, 1.0f), ForceMode2D.Impulse);
+        man.AddTorque(Random.Range(-100.0f, 100.0f), ForceMode2D.Impulse);
         Invoke("Win", 3.0f);
     }
 
-    public void ShowRopeIndicator() {
+    public void ShowRopeIndicator()
+    {
         ropeIndicator = true;
         ropeIndicatorTimer = Time.time;
     }
 
-    public void Win() {
+    public void Win()
+    {
         GameManager.Instance.LoadNextLevel();
     }
 
-    public void Lose() {
+    public void Lose()
+    {
         GameManager.Instance.Lose();
     }
 }
