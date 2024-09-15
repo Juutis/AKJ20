@@ -11,6 +11,8 @@ public class LassoEnemyIndicator : MonoBehaviour
     private TextMeshProUGUI distanceText;
     [SerializeField]
     private ArrowDir direction;
+    [SerializeField]
+    private GameObject canvas;
 
     SpriteRenderer spriteRenderer;
 
@@ -135,8 +137,14 @@ public class LassoEnemyIndicator : MonoBehaviour
 
         if (distance > 50)
         {
-            GameManager.Instance.Lose();
+            canvas.gameObject.SetActive(false);
+            Invoke("Lose", 0.5f);
         }
+    }
+
+    private void Lose()
+    {
+        GameManager.Instance.Lose();
     }
 
     enum ArrowDir

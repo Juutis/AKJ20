@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     private float speed = 0f;
     private float maxSpeed = 5f;
     private float minSpeed = 0f;
-    private float boostSpeedup = 0.33333f;
+    private float boostSpeedup = 0.55f;
     private int boosts = 0;
     private int maxBoosts = 3;
     private float boostStackCooldown = 3f;
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
     public void Initialize()
     {
-        speed = minSpeed;
+        speed = boostSpeedup;
         float difficulty = GameManager.Instance?.GetDifficulty() ?? 0;
         boostCooldown = Mathf.Lerp(0.8f, 1.4f, difficulty);
         boostStackCooldown = Mathf.Lerp(2f, 3f, difficulty);
