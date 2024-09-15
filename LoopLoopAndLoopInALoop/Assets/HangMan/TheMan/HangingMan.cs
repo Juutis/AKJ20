@@ -62,6 +62,20 @@ public class HangingMan : MonoBehaviour
             failTimer = Time.time;
         }
         if (Time.time - failTimer > 0.3f) {
+            anim.enabled = false;
+            man.simulated = true;
+            chair.simulated = true;
+            if (balance > 0)
+            {
+                man.AddTorque(1, ForceMode2D.Impulse);
+                chair.AddTorque(-1, ForceMode2D.Impulse);
+            }
+            else
+            {
+                man.AddTorque(-1, ForceMode2D.Impulse);
+                chair.AddTorque(1, ForceMode2D.Impulse);
+            }
+            rope.GetComponent<Rigidbody2D>().simulated = true;
             var dieAnim = balance > 0 ? "die_right" : "die_left";
             anim.Play(dieAnim);
             inActive = true;
@@ -89,6 +103,7 @@ public class HangingMan : MonoBehaviour
         rope.enabled = false;
         inActive = true;
         man.simulated = true;
+        man.gameObject.GetComponent<HingeJoint2D>().enabled = false;
         chair.simulated = true;
         anim.enabled = false;
         man.AddTorque(Random.Range(-1.0f, 1.0f), ForceMode2D.Impulse);
