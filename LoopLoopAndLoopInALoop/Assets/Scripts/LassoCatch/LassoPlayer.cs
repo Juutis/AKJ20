@@ -56,12 +56,12 @@ public class Player : MonoBehaviour
         //dir -= horizontal * Time.deltaTime * rotateSpeed;
         //body.MoveRotation(dir);
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
         {
             lassoPower += Time.deltaTime * 0.5f;
             lasso.SpinLasso(transform.position, transform.rotation);
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space))
         {
             Vector3[] asd = new Vector3[lassoIndicator.positionCount];
             lassoIndicator.GetPositions(asd);
