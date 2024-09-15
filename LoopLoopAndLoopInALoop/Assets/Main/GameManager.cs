@@ -40,6 +40,11 @@ public class GameManager : MonoBehaviour
 
     private bool winScreenActive;
 
+    private DialogueRunner dialogueRunner;
+
+    [SerializeField]
+    private LevelTransitions levelTransitions;
+
     void Awake()
     {
         if (Instance != null) {
@@ -52,7 +57,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        dialogueRunner = GetComponentInChildren<DialogueRunner>();
         FadeIn();
+        dialogueRunner.ShowDialogue(levelTransitions.InitialDialogue);
     }
 
     void Update()
@@ -137,6 +144,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(minigames[sceneIndex].SceneName);
     }
 
+    public void OnDialogueCompleted()
+    {
+        GoToNextLevel();
+    }
+
     void GoToNextLevel() {
         HideWinScreen();
         sceneIndex++;
@@ -173,13 +185,13 @@ public class GameManager : MonoBehaviour
 }
 
 [System.Serializable]
-struct MiniGame
+public struct MiniGame
 {
     public string SceneName;
     public WinScreen WinScreen;
 }
 
-enum WinScreen
+public enum WinScreen
 {
     GUNMAN,
     BOOZEMAN,
