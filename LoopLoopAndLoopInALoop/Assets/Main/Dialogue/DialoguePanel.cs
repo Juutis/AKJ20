@@ -4,6 +4,9 @@ using UnityEngine;
 public class DialoguePanel : MonoBehaviour
 {
     [SerializeField]
+    private TextMeshProUGUI charName;
+
+    [SerializeField]
     private TextMeshProUGUI textField;
 
     [SerializeField]
@@ -61,15 +64,41 @@ public class DialoguePanel : MonoBehaviour
         switch(line.Character)
         {
             case Character.GUNMAN:
+            case Character.MONCO:
                 gunmanFace.SetActive(true);
                 break;
             case Character.SHERIFF:
+            case Character.BILL:
                 sheriffFace.SetActive(true);
                 break;
             case Character.DRUNKARD:
+            case Character.TUCO:
                 boozemanFace.SetActive(true);
                 break;
         }
+        var name = "";
+        switch(line.Character)
+        {
+            case Character.GUNMAN:
+                name = "Mysterious gunman";
+                break;
+            case Character.MONCO:
+                name = "Monco Loop, Fastest Gun in the West";
+                break;
+            case Character.SHERIFF:
+                name = "Sheriff";
+                break;
+            case Character.BILL:
+                name = "Bill Loop, Sheriff of Tucumcari";
+                break;
+            case Character.DRUNKARD:
+                name = "Drunkard";
+                break;
+            case Character.TUCO:
+                name = "Tuco Loop, Drunkard";
+                break;
+        }
+        charName.SetText(name);
         lineTriggered = Time.time;
     }
 }
@@ -85,5 +114,8 @@ public enum Character
 {
     GUNMAN,
     SHERIFF,
-    DRUNKARD
+    DRUNKARD,
+    TUCO,
+    BILL,
+    MONCO
 }
