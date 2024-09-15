@@ -6,6 +6,11 @@ public class SaloonLassoTightener : MonoBehaviour
     [SerializeField]
     private Animator animator;
     private UnityAction afterTightenCallback;
+
+    public void Initialize(float difficulty)
+    {
+        animator.speed = 1 + difficulty * 0.5f;
+    }
     public void Tighten(SaloonBottle bottle, UnityAction action)
     {
         transform.position = bottle.transform.position;

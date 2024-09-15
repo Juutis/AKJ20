@@ -48,7 +48,7 @@ public class LassoEnemy : MonoBehaviour
         float difficulty = GameManager.Instance.GetDifficulty();
         minSpeed = Mathf.Lerp(1f, 2.5f, difficulty);
         maxSpeed = Mathf.Lerp(2f, 5f, difficulty);
-        circleCollider.radius = Mathf.Lerp(0.2f, 0.1f, difficulty);
+        circleCollider.radius = Mathf.Lerp(0.18f, 0.09f, difficulty);
         maxStrafeSpeed = Mathf.Lerp(1f, 2f, difficulty);
         maxSpeedTime = 5f - 2f * difficulty;
     }
@@ -60,6 +60,12 @@ public class LassoEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (EnemyMode.Caught == mode)
+        {
+            body.linearVelocity = Vector3.zero;
+            return;
+        }
+
         if (EnemyMode.Start == mode)
         {
             if (Time.time - started > startTime)
@@ -133,6 +139,12 @@ public class LassoEnemy : MonoBehaviour
             Debug.Log("Caught!");
             // UnityEditor.EditorApplication.isPlaying = false;
             Invoke("Win", 0.5f);
+            mode = EnemyMode.Caught;
+
+            if (collision.gameObject.TryGetComponent<Lasso>(out Lasso lasso))
+            {
+                lasso.EnemyCaught(transform.position);
+            }
         }
     }
 

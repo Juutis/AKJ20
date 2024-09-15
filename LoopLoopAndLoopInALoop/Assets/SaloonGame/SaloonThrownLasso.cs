@@ -51,6 +51,14 @@ public class SaloonThrownLasso : MonoBehaviour
     }
 
 
+    public void Initialize(float difficulty)
+    {
+        float modifier = 0.5f;
+        duration -= modifier * difficulty;
+        holdDuration -= modifier * difficulty;
+        maxDistance -= modifier * difficulty;
+    }
+
     public void ResetRope()
     {
         rope.Reset();

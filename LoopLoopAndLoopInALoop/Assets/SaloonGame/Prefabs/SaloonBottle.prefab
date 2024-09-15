@@ -366,6 +366,7 @@ MonoBehaviour:
   maxDistance: 0.5
   animator: {fileID: 4421642327795824369}
   bottleContainer: {fileID: 5969547943569693055}
+  moveDuration: 0.4
 --- !u!95 &4421642327795824369
 Animator:
   serializedVersion: 7

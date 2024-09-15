@@ -21,6 +21,9 @@ public class SaloonAimIndicator : MonoBehaviour
     private float noiseSpeedFactor = 5;
     private float noiseSpeed = 2;
 
+    private float difficultyModifier = 15;
+    private float difficultyFactor = 0;
+
     [SerializeField]
     private Transform startingPosition;
     [SerializeField]
@@ -29,6 +32,11 @@ public class SaloonAimIndicator : MonoBehaviour
 
     private bool isMoving = false;
     private bool isStarted = false;
+
+    public void Initialize(float difficulty)
+    {
+        difficultyFactor = difficulty * difficultyModifier;
+    }
 
     public void Move()
     {
@@ -52,7 +60,7 @@ public class SaloonAimIndicator : MonoBehaviour
 
     private float Noise()
     {
-        return Mathf.PerlinNoise(Time.time * noiseSpeed, 0.0f);
+        return Mathf.PerlinNoise(Time.time * (noiseSpeed + difficultyFactor), 0.0f);
     }
 
     void Update()
@@ -63,7 +71,7 @@ public class SaloonAimIndicator : MonoBehaviour
         }
 
         Vector3 pos = movingTransform.position;
-        pos.x += Time.deltaTime * (speed + noiseSpeedFactor * Noise()) * direction;
+        pos.x += Time.deltaTime * ((speed + difficultyFactor) + noiseSpeedFactor * Noise()) * direction;
 
         bool isWithinBounds = leftBorder.position.x < pos.x && pos.x < rightBorder.position.x;
         bool isOutofBounds = pos.x > rightBorder.position.x || pos.x < leftBorder.position.x;

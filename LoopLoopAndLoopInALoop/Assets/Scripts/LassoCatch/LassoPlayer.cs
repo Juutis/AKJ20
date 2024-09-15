@@ -12,11 +12,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private List<Image> shoeImages;
     [SerializeField]
+    private List<Image> shoeImageMasks;
+    [SerializeField]
     private Image boostCooldownImage;
 
     private Rigidbody2D body;
 
     private float lassoPower = 0f;
+    private float maxPower = 1f;
     private List<Vector3> lassoIndicatorNodes = new();
     private float speed = 0f;
     private float maxSpeed = 5f;
@@ -51,30 +54,31 @@ public class Player : MonoBehaviour
         boostStackCooldown = Mathf.Lerp(2f, 3f, difficulty);
     }
 
+    private Vector3 LassoOrigin()
+    {
+        return transform.position + Vector3.up * 0.3f + Vector3.right * 0.2f;
+    }
+
     // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        //dir -= horizontal * Time.deltaTime * rotateSpeed;
-        //body.MoveRotation(dir);
 
-        if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
+        if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space) && lasso.GetMode() != Lasso.LassoMode.Throw)
         {
-            lassoPower += Time.deltaTime * 0.5f;
-            lasso.SpinLasso(transform.position, transform.rotation);
+            lassoPower = Mathf.Min(maxPower, lassoPower + Time.deltaTime * 0.5f);
+            lasso.SpinLasso(LassoOrigin(), transform.rotation);
         }
         else if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space))
         {
             Vector3[] asd = new Vector3[lassoIndicator.positionCount];
             lassoIndicator.GetPositions(asd);
-            //Debug.Log(string.Join(',', asd));
-            lasso.ThrowLasso(asd.ToList(), transform.position, transform.rotation);
+            lasso.ThrowLasso(asd.ToList(), LassoOrigin(), transform.rotation);
             lassoPower = 0;
         }
 
         if (Input.GetKeyDown(KeyCode.W) && (Time.time - lastBoostCooldown > boostCooldown))
         {
-            //Debug.Log("Pressed w: " + boosts + ", " + speed);
             if (boosts < maxBoosts)
             {
                 boosts++;
@@ -88,7 +92,7 @@ public class Player : MonoBehaviour
             lastBoostCooldown = Time.time;
         }
 
-            if (boosts == 0)
+        if (boosts == 0)
         {
             lastBoostStackCooldown = Time.time;
         }
@@ -106,11 +110,17 @@ public class Player : MonoBehaviour
             lassoIndicator.SetPosition(i, pos);
         }
 
-        lasso.UpdateLasso(transform.position, transform.rotation, lassoPower);
+        lasso.UpdateLasso(LassoOrigin(), transform.rotation, lassoPower);
 
         for (int i = 0; i < shoeImages.Count; i++)
         {
-            shoeImages[i].enabled = boosts > i;
+            shoeImages[i].enabled = (shoeImages.Count - boosts + 1) > i;
+            shoeImageMasks[i].fillAmount = 1;
+        }
+
+        if (boosts > 0)
+        {
+            shoeImageMasks[shoeImageMasks.Count - boosts].fillAmount = (Time.time - lastBoostStackCooldown) / boostStackCooldown;
         }
 
         boostCooldownImage.fillAmount = 1 - (Time.time - lastBoostCooldown) / boostCooldown;

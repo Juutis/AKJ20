@@ -11,6 +11,7 @@ public class Lasso : MonoBehaviour
     private List<Vector3> wayPoints = new();
     private int currentWaypointIndex = 0;
     private Vector3 origin;
+    private Vector3 enemyPos;
     private float lerpT = 0;
     private Quaternion rotation;
     private float spinRotation = 0;
@@ -35,7 +36,7 @@ public class Lasso : MonoBehaviour
         circleCollider = GetComponent<CircleCollider2D>();
         circleCollider.enabled = false;
         float difficulty = GameManager.Instance.GetDifficulty();
-        circleCollider.radius = Mathf.Lerp(0.3f, 0.18f, difficulty);
+        circleCollider.radius = Mathf.Lerp(0.28f, 0.15f, difficulty);
         lassoSpeed = Mathf.Lerp(5f, 4f, difficulty); // wayPointDistance() / lassoTime;
     }
 
@@ -92,6 +93,10 @@ public class Lasso : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, spinRotation);
             spinRotation += Time.deltaTime * 400f;
         }
+        else if (LassoMode.Caught == mode)
+        {
+            transform.position = enemyPos;
+        }
 
         lineRenderer.enabled = LassoMode.None != mode;
         circleCollider.enabled = LassoMode.Throw == mode;
@@ -147,11 +152,18 @@ public class Lasso : MonoBehaviour
         return mode;
     }
 
+    public void EnemyCaught(Vector3 pos)
+    {
+        mode = LassoMode.Caught;
+        enemyPos = pos;
+    }
+
     public enum LassoMode
     {
         None,
         Spin,
         Prepare,
-        Throw
+        Throw,
+        Caught
     }
 }

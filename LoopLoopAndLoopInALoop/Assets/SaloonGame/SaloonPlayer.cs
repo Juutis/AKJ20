@@ -24,21 +24,30 @@ public class SaloonPlayer : MonoBehaviour
 
     [SerializeField]
     private Transform bottleContainer;
+
     [SerializeField]
     private Transform catchContainer;
-    private List<SaloonBottle> bottles;
+    //private List<SaloonBottle> bottles;
     private List<SaloonBottle> caughtBottles;
 
     private SaloonBottle targetBottle;
 
     private bool isAiming = false;
     private bool isLassoing = false;
-
+    private float difficulty = 0f;
     public Transform AimTransform { get { return aimIndicator.MovingTransform; } }
     void Start()
     {
-        bottles = bottleContainer.GetComponentsInChildren<SaloonBottle>().ToList();
+        //bottles = bottleContainer.GetComponentsInChildren<SaloonBottle>().ToList();
         caughtBottles = new();
+        if (GameManager.Instance != null)
+        {
+            difficulty = GameManager.Instance.GetDifficulty();
+        }
+        Debug.Log($"Difficulty is {difficulty}");
+        aimIndicator.Initialize(difficulty);
+        thrownLasso.Initialize(difficulty);
+        lassoTightener.Initialize(difficulty);
     }
 
     void ResetLasso()
@@ -82,7 +91,6 @@ public class SaloonPlayer : MonoBehaviour
                     Debug.Log("You caught the bottle!");
                     targetBottle.AnimateCatch(catchContainer);
                     caughtBottles.Add(targetBottle);
-                    bottles.Remove(targetBottle);
                     targetBottle = null;
                     thrownLasso.ResetRope();
                     saloonLasso.Stop();
@@ -123,7 +131,7 @@ public class SaloonPlayer : MonoBehaviour
             saloonLasso.Stop();
             Vector3 aimPos = aimIndicator.MovingTransform.position;
             aimIndicator.Stop();
-            SaloonBottle hitBottle = bottles.Find(bottle => bottle.IsHighlighted);
+            SaloonBottle hitBottle = SaloonManager.main.GetHighlightedBottle();
             saloonLasso.Hide();
             if (hitBottle != null)
             {
