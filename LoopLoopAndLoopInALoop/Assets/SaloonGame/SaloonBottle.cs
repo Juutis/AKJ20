@@ -36,7 +36,7 @@ public class SaloonBottle : MonoBehaviour
 
     public void Initialize(float difficulty)
     {
-        lifeTime -= difficulty * 2f;
+        lifeTime -= difficulty * 0.4f;
         aimTarget = SaloonPlayer.main.AimTransform;
         animator.Play("bottleInit");
     }
