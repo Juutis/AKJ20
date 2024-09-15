@@ -33,4 +33,11 @@ public class HangManManager : MonoBehaviour
             Difficulty = GameManager.Instance.GetDifficulty();
         }
     }
+
+    void Update()
+    {
+        if (GameManager.Instance != null) {
+            Difficulty = GameManager.Instance.GetDifficulty();
+        }
+    }
 }
