@@ -178,6 +178,7 @@ public class GameManager : MonoBehaviour
     }
 
     void GoToNextLevel() {
+        dialoguePanel.SetActive(false);
         sceneIndex++;
         if (sceneIndex >= minigames.Count()) {
             sceneIndex = 0;
@@ -188,10 +189,9 @@ public class GameManager : MonoBehaviour
             }
         }
         dayIndicator.SetText("Day " + (currentLoop+1) + " / " + totalLoops);
-        dialoguePanel.SetActive(false);
         HideWinScreen();
         FadeIn();
-        difficulty = (float)currentLoop / (totalLoops - 1); // 0.0 = min difficulty, 1.0 = max difficulty
+        difficulty = (float)currentLoop / (totalLoops); // 0.0 = min difficulty, 1.0 = max difficulty
         SceneManager.LoadScene(minigames[sceneIndex].SceneName);
     }
 
