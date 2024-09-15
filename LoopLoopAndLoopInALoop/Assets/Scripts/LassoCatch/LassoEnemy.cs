@@ -51,7 +51,7 @@ public class LassoEnemy : MonoBehaviour
 
         float difficulty = GameManager.Instance?.GetDifficulty() ?? 0;
         minSpeed = Mathf.Lerp(1f, 2f, difficulty);
-        maxSpeed = Mathf.Lerp(2f, 4.5f, difficulty);
+        maxSpeed = Mathf.Lerp(2f, 4f, difficulty);
         circleCollider.radius = Mathf.Lerp(0.18f, 0.09f, difficulty);
         maxStrafeSpeed = Mathf.Lerp(1f, 2f, difficulty);
         maxSpeedTime = 5f - 2f * difficulty;

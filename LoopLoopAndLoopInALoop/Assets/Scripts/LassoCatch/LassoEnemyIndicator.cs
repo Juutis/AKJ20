@@ -94,7 +94,6 @@ public class LassoEnemyIndicator : MonoBehaviour
             Vector3 right = Camera.main.ViewportToWorldPoint(new(1f, 0f)) + Vector3.right * 0.5f;
             if (enemy.transform.position.x >= right.x)
             {
-                Debug.Log("Enemy: " + enemy.transform.position.x + " Indicator: " + right.x);
                 if (Time.time - startShowWait > showTimeBuffer)
                 {
                     spriteRenderer.enabled = true;
@@ -140,6 +139,13 @@ public class LassoEnemyIndicator : MonoBehaviour
             canvas.gameObject.SetActive(false);
             Invoke("Lose", 0.5f);
         }
+
+        Vector3 topRight = Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f));
+        Vector3 botLeft = Camera.main.ViewportToWorldPoint(new Vector3(0f, 0f));
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, botLeft.x, topRight.x),
+            Mathf.Clamp(transform.position.y, botLeft.y, topRight.y)
+        );
     }
 
     private void Lose()
