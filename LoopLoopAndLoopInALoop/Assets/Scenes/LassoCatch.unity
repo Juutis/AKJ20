@@ -3766,7 +3766,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f3ae82e7b67de4a9ed3a09a0230842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgPrefabs: []
+  bgPrefabs:
+  - {fileID: 2247627891294564535, guid: 857daa985200f064587b9fadcce4c82f, type: 3}
+  - {fileID: 3851601681105392392, guid: 77729a3ec55fbe746b5ead731700a7d5, type: 3}
+  - {fileID: 3851601681105392392, guid: 0fd36df9f327d9841b42c063ddab78a0, type: 3}
+  - {fileID: 3851601681105392392, guid: 376e62a5191c01e4eb6bcc7db52c4bbf, type: 3}
+  - {fileID: 3851601681105392392, guid: 0fd36df9f327d9841b42c063ddab78a0, type: 3}
+  - {fileID: 3851601681105392392, guid: 376e62a5191c01e4eb6bcc7db52c4bbf, type: 3}
+  - {fileID: 3851601681105392392, guid: 376e62a5191c01e4eb6bcc7db52c4bbf, type: 3}
+  - {fileID: 3851601681105392392, guid: 376e62a5191c01e4eb6bcc7db52c4bbf, type: 3}
   fgPrefabs: []
 --- !u!4 &2022170698
 Transform:
