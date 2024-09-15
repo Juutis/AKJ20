@@ -1234,6 +1234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curtains: {fileID: 3316092298966806061}
+  musicPlayer: {fileID: 1261142588182472470}
   minigames:
   - SceneName: saloonScene
     WinScreen: 1

@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private SpriteRenderer curtains;
 
+    [SerializeField]
+    private MusicPlayer musicPlayer;
+
     private float fadeDuration = 1.0f;
     private float fadeInTimer = 0;
     private float fadeOutTimer = 0;
@@ -70,7 +73,7 @@ public class GameManager : MonoBehaviour
         dialogueRunner = GetComponentInChildren<DialogueRunner>();
         FadeIn();
         dialogueRunner.ShowDialogue(levelTransitions.InitialDialogue);
-        MusicPlayer.main.PlayMusic(MusicType.MainMenu);
+        musicPlayer.PlayMusic(MusicType.MainMenu);
     }
 
     void Update()
@@ -142,7 +145,7 @@ public class GameManager : MonoBehaviour
     void DisplayWinScreen()
     {
         SceneManager.LoadScene("main");
-        MusicPlayer.main.PlayMusic(MusicType.MainMenu);
+        musicPlayer.PlayMusic(MusicType.MainMenu);
         DisplayWinScreenForMiniGame(minigames[sceneIndex]);
         winScreenActive = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -198,7 +201,17 @@ public class GameManager : MonoBehaviour
         HideWinScreen();
         FadeIn();
         difficulty = (float)currentLoop / (totalLoops); // 0.0 = min difficulty, 1.0 = max difficulty
-        SceneManager.LoadScene(minigames[sceneIndex].SceneName);
+        string sceneName = minigames[sceneIndex].SceneName;
+        if (sceneName == "LassoCatch") {
+            musicPlayer.PlayMusic(MusicType.Chase);
+        }
+        if (sceneName == "saloonScene") {
+            musicPlayer.PlayMusic(MusicType.Saloon);
+        }
+        if (sceneName == "hangman") {
+            musicPlayer.PlayMusic(MusicType.Hangman);
+        }
+        SceneManager.LoadScene(sceneName);
     }
 
     public float GetDifficulty()

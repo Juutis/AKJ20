@@ -34,7 +34,6 @@ public class HangingMan : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        MusicPlayer.main.PlayMusic(MusicType.Hangman);
         anim = GetComponent<Animator>();
         Invoke("RandomizeHeading", 3.0f);
         ropeOrigColor = rope.color;
