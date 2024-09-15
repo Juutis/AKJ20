@@ -185,7 +185,6 @@ public class GameManager : MonoBehaviour
         HideWinScreen();
         FadeIn();
         difficulty = (float)currentLoop / (totalLoops - 1); // 0.0 = min difficulty, 1.0 = max difficulty
-        HangManManager.Instance.Difficulty = difficulty;
         SceneManager.LoadScene(minigames[sceneIndex].SceneName);
     }
 
