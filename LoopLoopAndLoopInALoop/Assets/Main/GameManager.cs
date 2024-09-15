@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour
 
     void DisplayWinScreen()
     {
+        SceneManager.LoadScene("main");
         DisplayWinScreenForMiniGame(minigames[sceneIndex]);
         winScreenActive = true;
         Cursor.lockState = CursorLockMode.Confined;
