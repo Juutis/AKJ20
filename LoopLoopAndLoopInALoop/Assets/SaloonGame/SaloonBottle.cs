@@ -27,16 +27,18 @@ public class SaloonBottle : MonoBehaviour
 
     private float moveTimer = 0f;
 
+    [SerializeField]
+    private float lifeTime = 5f;
+    private float lifeTimer = 0;
+
     private bool isMoving = false;
+    private bool isInitialized = false;
 
-    void Start()
+    public void Initialize(float difficulty)
     {
-        Initialize();
-    }
-
-    public void Initialize()
-    {
+        lifeTime -= difficulty * 2f;
         aimTarget = SaloonPlayer.main.AimTransform;
+        animator.Play("bottleInit");
     }
 
     public void Catch()
@@ -59,11 +61,21 @@ public class SaloonBottle : MonoBehaviour
 
     public void AfterFail()
     {
+        SaloonManager.main.BreakBottle(this);
         Destroy(gameObject);
+    }
+
+    public void AfterInit()
+    {
+        isInitialized = true;
     }
 
     void Update()
     {
+        if (!isInitialized)
+        {
+            return;
+        }
         if (isMoving)
         {
             moveTimer += Time.deltaTime;
@@ -72,6 +84,7 @@ public class SaloonBottle : MonoBehaviour
             if (moveDelta >= 1f)
             {
                 transform.position = targetPos;
+                SaloonManager.main.GainBottle(this);
                 bottleContainer.gameObject.SetActive(false);
                 isMoving = false;
             }
@@ -80,6 +93,11 @@ public class SaloonBottle : MonoBehaviour
         if (isCaught || isFailing)
         {
             return;
+        }
+        lifeTimer += Time.deltaTime;
+        if (lifeTimer > lifeTime)
+        {
+            Kill();
         }
         if (Mathf.Abs(aimTarget.position.x - transform.position.x) < maxDistance)
         {
@@ -93,7 +111,7 @@ public class SaloonBottle : MonoBehaviour
 
     public void Highlight()
     {
-        if (isHighlighted)
+        if (!isInitialized || isHighlighted)
         {
             return;
         }
