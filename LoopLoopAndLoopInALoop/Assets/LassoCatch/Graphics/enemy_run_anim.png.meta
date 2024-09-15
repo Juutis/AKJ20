@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: 34ea1544bf14460438930d6e0ce2244a
+guid: 958669fa5f8b6484dbb7e2d60df93f6e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 478855486423854370
-    second: horse_anim_0
+      213: -5707706012600547803
+    second: enemy_run_anim_0
   - first:
-      213: 9044381338169977336
-    second: horse_anim_1
+      213: -8030959494570528745
+    second: enemy_run_anim_1
   - first:
-      213: 9033279432335021649
-    second: horse_anim_2
+      213: -9007863906355875759
+    second: enemy_run_anim_2
   - first:
-      213: -7131436193511416013
-    second: horse_anim_3
+      213: 5518006072998519769
+    second: enemy_run_anim_3
   - first:
-      213: 1333253291503226121
-    second: horse_anim_4
+      213: 3221324810258623897
+    second: enemy_run_anim_4
   - first:
-      213: -5445295326030618248
-    second: horse_anim_5
+      213: 978491701885493209
+    second: enemy_run_anim_5
   - first:
-      213: -4659238190866827296
-    second: horse_anim_6
+      213: 4069141940553796206
+    second: enemy_run_anim_6
   - first:
-      213: -2346505354669660154
-    second: horse_anim_7
-  - first:
-      213: 6444913275808137484
-    second: horse_anim_8
-  - first:
-      213: -4974000280472791050
-    second: horse_anim_9
+      213: 185032417107274992
+    second: enemy_run_anim_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -153,13 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: horse_anim_0
+      name: enemy_run_anim_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 21
+        y: 14
+        width: 23
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22d6a0f178c35a600800000000000000
-      internalID: 478855486423854370
+      spriteID: 526459c4f972ac0b0800000000000000
+      internalID: -5707706012600547803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horse_anim_1
+      name: enemy_run_anim_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 85
+        y: 14
+        width: 27
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f92bca68e8148d70800000000000000
-      internalID: 9044381338169977336
+      spriteID: 710b298b3ec4c8090800000000000000
+      internalID: -8030959494570528745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horse_anim_2
+      name: enemy_run_anim_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 149
+        y: 14
+        width: 23
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 156db2988c7ac5d70800000000000000
-      internalID: 9033279432335021649
+      spriteID: 150789cb083adf280800000000000000
+      internalID: -9007863906355875759
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horse_anim_3
+      name: enemy_run_anim_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 213
+        y: 15
+        width: 22
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +228,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33f5363e09c080d90800000000000000
-      internalID: -7131436193511416013
+      spriteID: 9d36689a945e39c40800000000000000
+      internalID: 5518006072998519769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horse_anim_4
+      name: enemy_run_anim_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 276
+        y: 14
+        width: 23
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90d8ba30ecaa08210800000000000000
-      internalID: 1333253291503226121
+      spriteID: 99d2e9df8d174bc20800000000000000
+      internalID: 3221324810258623897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horse_anim_5
+      name: enemy_run_anim_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        x: 336
+        y: 14
+        width: 27
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,20 +272,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 871a9da50cc6e64b0800000000000000
-      internalID: -5445295326030618248
+      spriteID: 9df5d82c40d449d00800000000000000
+      internalID: 978491701885493209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horse_anim_6
+      name: enemy_run_anim_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
+        x: 404
+        y: 14
+        width: 23
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,20 +294,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e7f2751d8f075fb0800000000000000
-      internalID: -4659238190866827296
+      spriteID: e6a4a53290f787830800000000000000
+      internalID: 4069141940553796206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horse_anim_7
+      name: enemy_run_anim_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
+        x: 469
+        y: 15
+        width: 22
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,8 +316,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 608ec5fefc98f6fd0800000000000000
-      internalID: -2346505354669660154
+      spriteID: 0fc6c95c00e519200800000000000000
+      internalID: 185032417107274992
       vertices: []
       indices: 
       edges: []
@@ -332,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 345573e92ce174d4da192b9a3c455a5d
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -342,14 +336,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      horse_anim_0: 478855486423854370
-      horse_anim_1: 9044381338169977336
-      horse_anim_2: 9033279432335021649
-      horse_anim_3: -7131436193511416013
-      horse_anim_4: 1333253291503226121
-      horse_anim_5: -5445295326030618248
-      horse_anim_6: -4659238190866827296
-      horse_anim_7: -2346505354669660154
+      enemy_run_anim_0: -5707706012600547803
+      enemy_run_anim_1: -8030959494570528745
+      enemy_run_anim_2: -9007863906355875759
+      enemy_run_anim_3: 5518006072998519769
+      enemy_run_anim_4: 3221324810258623897
+      enemy_run_anim_5: 978491701885493209
+      enemy_run_anim_6: 4069141940553796206
+      enemy_run_anim_7: 185032417107274992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
