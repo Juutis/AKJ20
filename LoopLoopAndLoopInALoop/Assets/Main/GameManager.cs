@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -49,6 +50,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject dialoguePanel;
+
+    [SerializeField]
+    private TextMeshProUGUI dayIndicator;
 
     void Awake()
     {
@@ -154,6 +158,7 @@ public class GameManager : MonoBehaviour
 
     void DisplayLoseScreen()
     {
+        SceneManager.LoadScene("main");
         loseScreen.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -182,6 +187,7 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
+        dayIndicator.SetText("Day " + (currentLoop+1) + " / " + totalLoops);
         dialoguePanel.SetActive(false);
         HideWinScreen();
         FadeIn();
