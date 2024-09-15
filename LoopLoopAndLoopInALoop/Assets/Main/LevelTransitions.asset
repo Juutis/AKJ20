@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3c281e06b0f2346950305dc61444d9, type: 3}
+  m_Name: LevelTransitions
+  m_EditorClassIdentifier: 
+  InitialDialogue:
+  - Character: 2
+    Text: Goldurnit, I'm thirsty.
+  - Character: 2
+    Text: Better go bend an elbow in the saloon over there.
+  Days:
+  - BoozeToLasso:
+      Dialog:
+      - Character: 1
+        Text: HOLD IT
+      - Character: 1
+        Text: You better pay for those drinks.
+      - Character: 2
+        Text: Well grab my legs and slap my horse. If it isn' the fambly do-gooder..
+      - Character: 2
+        Text: These here folks don' even know it's gone.
+      - Character: 2
+        Text: '"Sheriff Sir"'
+      - Character: 1
+        Text: You may be my brother but you're not above the law. Come along now!!
+      - Character: 2
+        Text: You'll have to catch me first!
+    LassoToHanging:
+      Dialog:
+      - Character: 1
+        Text: I warned ya, boy!
+      - Character: 1
+        Text: This town's had enough. You're looking at hanging.
+      - Character: 2
+        Text: Oh, come on. Can't we just, I dunno, have a drink and forget about
+          all this mess? Ain't nobody need to get hurt!
+      - Character: 1
+        Text: This pains me a great deal but you've had plenty of chances already.
+      - Character: 1
+        Text: Let's go.
+      - Character: 0
+        Text: ...
+    HangingToBooze:
+      Dialog:
+      - Character: 2
+        Text: Whew, you came in the nick of time there, brother!
+      - Character: 0
+        Text: ...
+      - Character: 2
+        Text: Old Bill there's lost his mind. What kind of man would hang his own
+          brother.
+      - Character: 2
+        Text: Well, at least someone in the fambly has some sense in them.
+      - Character: 0
+        Text: ...
+      - Character: 2
+        Text: I dunno what I'd have done without you, brother!
+      - Character: 0
+        Text: ...
+      - Character: 0
+        Text: Come on, let's go get some drinks. It's on me!
+  - BoozeToLasso:
+      Dialog:
+      - Character: 1
+        Text: What? I thought I dealt with you already.
+      - Character: 2
+        Text: Ain't that easy getting rid of me, brother!
+      - Character: 2
+        Text: I'm outta here! Ta-ta!
+    LassoToHanging:
+      Dialog:
+      - Character: 1
+        Text: Didn't occur to you to attempt your escape of the back of a horse,
+          did it?
+      - Character: 1
+        Text: Off to the gallows we go!
+      - Character: 1
+        Text: ... again.
+      - Character: 0
+        Text: ...
+    HangingToBooze:
+      Dialog:
+      - Character: 0
+        Text: ...
+      - Character: 2
+        Text: You're quite the shot, are ya?
+      - Character: 2
+        Text: Obviously not as good as yours truly, but decent nevertheless.
+      - Character: 0
+        Text: ...
+      - Character: 2
+        Text: Let's go get some drinks!
+  - BoozeToLasso:
+      Dialog: []
+    LassoToHanging:
+      Dialog:
+      - Character: 0
+        Text: sadfasdfsaf
+    HangingToBooze:
+      Dialog:
+      - Character: 0
+        Text: asd
+  - BoozeToLasso:
+      Dialog: []
+    LassoToHanging:
+      Dialog:
+      - Character: 0
+        Text: sadfasdfsaf
+    HangingToBooze:
+      Dialog:
+      - Character: 0
+        Text: asd
+  - BoozeToLasso:
+      Dialog: []
+    LassoToHanging:
+      Dialog:
+      - Character: 0
+        Text: sadfasdfsaf
+    HangingToBooze:
+      Dialog:
+      - Character: 2
+        Text: Maybe this drinkin' whisky business ain't for me, after all.
+      - Character: 0
+        Text: ...
+      - Character: 0
+        Text: Good.
