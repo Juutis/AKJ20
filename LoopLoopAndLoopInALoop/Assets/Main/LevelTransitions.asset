@@ -23,4 +23,14 @@ MonoBehaviour:
     LassoToHanging:
       Dialog: []
     HangingToBooze:
+      Dialog:
+      - Character: 0
+        Text: YO
+  - BoozeToLasso:
       Dialog: []
+    LassoToHanging:
+      Dialog: []
+    HangingToBooze:
+      Dialog:
+      - Character: 0
+        Text: asd

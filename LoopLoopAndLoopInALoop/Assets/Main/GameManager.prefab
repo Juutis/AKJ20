@@ -533,6 +533,7 @@ MonoBehaviour:
   boozeScreen: {fileID: 6840233637889538053}
   loseScreen: {fileID: 4607377064083177473}
   levelTransitions: {fileID: 11400000, guid: 0b4e7722147111e4f9642277fa0f41d0, type: 2}
+  dialoguePanel: {fileID: 5015702709928539292}
 --- !u!114 &6513323918648187982
 MonoBehaviour:
   m_ObjectHideFlags: 0

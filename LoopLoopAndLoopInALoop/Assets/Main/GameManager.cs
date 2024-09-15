@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private LevelTransitions levelTransitions;
 
+    [SerializeField]
+    private GameObject dialoguePanel;
+
     void Awake()
     {
         if (Instance != null) {
@@ -82,9 +85,30 @@ public class GameManager : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                GoToNextLevel();
+                HideWinScreen();
+                ShowDialogueForNextLevel();
             }
         }
+    }
+
+    void ShowDialogueForNextLevel()
+    {
+        var day = levelTransitions.Days[currentLoop];
+        DialogueLine[] dialogue = null;
+        switch (minigames[sceneIndex].WinScreen)
+        {
+            case WinScreen.BOOZEMAN:
+                dialogue = day.BoozeToLasso.Dialog;
+                break;
+            case WinScreen.LASSOMAN:
+                dialogue = day.LassoToHanging.Dialog;
+                break;
+            case WinScreen.GUNMAN:
+                dialogue = day.HangingToBooze.Dialog;
+                break;
+        }
+        dialoguePanel.SetActive(true);
+        dialogueRunner.ShowDialogue(dialogue);
     }
 
     public void LoadNextLevel()
@@ -111,9 +135,14 @@ public class GameManager : MonoBehaviour
 
     void DisplayWinScreen()
     {
-        if (sceneIndex == minigames.Count() - 1 && currentLoop == totalLoops - 1) {
-            winGameScreen.SetActive(true);
-            return;
+        sceneIndex++;
+        if (sceneIndex >= minigames.Count()) {
+            sceneIndex = 0;
+            currentLoop++;
+            if (currentLoop >= totalLoops) {
+                winGameScreen.SetActive(true);
+                return;
+            }
         }
         DisplayWinScreenForMiniGame(minigames[sceneIndex]);
         winScreenActive = true;
@@ -152,12 +181,8 @@ public class GameManager : MonoBehaviour
     }
 
     void GoToNextLevel() {
+        dialoguePanel.SetActive(false);
         HideWinScreen();
-        sceneIndex++;
-        if (sceneIndex >= minigames.Count()) {
-            sceneIndex = 0;
-            currentLoop++;
-        }
         FadeIn();
         difficulty = (float)currentLoop / (totalLoops - 1); // 0.0 = min difficulty, 1.0 = max difficulty
         HangManManager.Instance.Difficulty = difficulty;
