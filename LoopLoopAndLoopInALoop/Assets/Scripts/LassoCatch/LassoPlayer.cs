@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     public void Initialize()
     {
         speed = minSpeed;
-        float difficulty = GameManager.Instance.GetDifficulty();
+        float difficulty = GameManager.Instance?.GetDifficulty() ?? 0;
         boostCooldown = Mathf.Lerp(0.8f, 1.4f, difficulty);
         boostStackCooldown = Mathf.Lerp(2f, 3f, difficulty);
     }
@@ -130,10 +130,6 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // transform.Rotate(Vector3.forward, -horizontal * Time.deltaTime * rotateSpeed);
-        
-
-        body.linearVelocity = new Vector2(horizontal, speed);// new Vector2(0f, speed) * Time.deltaTime;
-
+        body.linearVelocity = new Vector2(horizontal, speed);
     }
 }

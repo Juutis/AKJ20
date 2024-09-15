@@ -35,9 +35,9 @@ public class Lasso : MonoBehaviour
         lineRenderer.enabled = false;
         circleCollider = GetComponent<CircleCollider2D>();
         circleCollider.enabled = false;
-        float difficulty = GameManager.Instance.GetDifficulty();
+        float difficulty = GameManager.Instance?.GetDifficulty() ?? 0;
         circleCollider.radius = Mathf.Lerp(0.28f, 0.15f, difficulty);
-        lassoSpeed = Mathf.Lerp(5f, 4f, difficulty); // wayPointDistance() / lassoTime;
+        lassoSpeed = Mathf.Lerp(5f, 4f, difficulty);
     }
 
     // Update is called once per frame
@@ -134,17 +134,6 @@ public class Lasso : MonoBehaviour
             mode = LassoMode.Spin;
             spinRotation = 0;
         }
-    }
-
-    private float wayPointDistance()
-    {
-        float dist = 0f;
-        for (int i = 0; i < wayPoints.Count - 1; i++)
-        {
-            dist += (wayPoints[i + 1] - wayPoints[i]).magnitude;
-        }
-
-        return dist;
     }
 
     public LassoMode GetMode()
