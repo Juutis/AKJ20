@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     private int sceneIndex = 0;
     
-    private int totalLoops = 2;
+    private int totalLoops = 5;
     private int currentLoop = 0;
     private float difficulty = 0f;
 

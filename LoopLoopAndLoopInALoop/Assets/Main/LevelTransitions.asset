@@ -13,21 +13,101 @@ MonoBehaviour:
   m_Name: LevelTransitions
   m_EditorClassIdentifier: 
   InitialDialogue:
-  - Character: 0
-    Text: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
   - Character: 2
-    Text: NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+    Text: Goldurnit, I'm thirsty.
+  - Character: 2
+    Text: Better go bend an elbow in the saloon over there.
   Days:
+  - BoozeToLasso:
+      Dialog:
+      - Character: 1
+        Text: HOLD IT
+      - Character: 1
+        Text: You better pay for those drinks.
+      - Character: 2
+        Text: Well grab my legs and slap my horse. If it isn' the fambly do-gooder..
+      - Character: 2
+        Text: These here folks don' even know it's gone.
+      - Character: 2
+        Text: '"Sheriff Sir"'
+      - Character: 1
+        Text: You may be my brother but you're not above the law. Come along now!!
+      - Character: 2
+        Text: You'll have to catch me first!
+    LassoToHanging:
+      Dialog:
+      - Character: 1
+        Text: I warned ya, boy!
+      - Character: 1
+        Text: This town's had enough. You're looking at hanging.
+      - Character: 2
+        Text: Oh, come on. Can't we just, I dunno, have a drink and forget about
+          all this mess? Ain't nobody need to get hurt!
+      - Character: 1
+        Text: This pains me a great deal but you've had plenty of chances already.
+      - Character: 1
+        Text: Let's go.
+      - Character: 0
+        Text: ...
+    HangingToBooze:
+      Dialog:
+      - Character: 2
+        Text: Whew, you came in the nick of time there, brother!
+      - Character: 0
+        Text: ...
+      - Character: 2
+        Text: Old Bill there's lost his mind. What kind of man would hang his own
+          brother.
+      - Character: 2
+        Text: Well, at least someone in the fambly has some sense in them.
+      - Character: 0
+        Text: ...
+      - Character: 2
+        Text: I dunno what I'd have done without you, brother!
+      - Character: 0
+        Text: ...
+      - Character: 0
+        Text: Come on, let's go get some drinks. It's on me!
   - BoozeToLasso:
       Dialog: []
     LassoToHanging:
       Dialog:
       - Character: 0
-        Text: asdfasfasf
+        Text: sadfasdfsaf
     HangingToBooze:
       Dialog:
       - Character: 0
-        Text: YO
+        Text: asd
+  - BoozeToLasso:
+      Dialog: []
+    LassoToHanging:
+      Dialog:
+      - Character: 0
+        Text: sadfasdfsaf
+    HangingToBooze:
+      Dialog:
+      - Character: 0
+        Text: asd
+  - BoozeToLasso:
+      Dialog: []
+    LassoToHanging:
+      Dialog:
+      - Character: 0
+        Text: sadfasdfsaf
+    HangingToBooze:
+      Dialog:
+      - Character: 0
+        Text: asd
+  - BoozeToLasso:
+      Dialog: []
+    LassoToHanging:
+      Dialog:
+      - Character: 0
+        Text: sadfasdfsaf
+    HangingToBooze:
+      Dialog:
+      - Character: 0
+        Text: asd
   - BoozeToLasso:
       Dialog: []
     LassoToHanging:
