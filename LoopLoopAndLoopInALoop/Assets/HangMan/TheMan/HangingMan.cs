@@ -107,6 +107,7 @@ public class HangingMan : MonoBehaviour
     {
         if (inActive) return;
         ropeGone.Play();
+        ropeGone.transform.parent = null;
         rope.enabled = false;
         inActive = true;
         man.simulated = true;
