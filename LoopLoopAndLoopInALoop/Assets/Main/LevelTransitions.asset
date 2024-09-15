@@ -21,15 +21,15 @@ MonoBehaviour:
   - BoozeToLasso:
       Dialog:
       - Character: 1
-        Text: HOLD IT
+        Text: HOLD IT!
       - Character: 1
         Text: You better pay for those drinks.
       - Character: 2
-        Text: Well grab my legs and slap my horse. If it isn' the fambly do-gooder..
+        Text: Well grab my legs and slap my horse. If it isn' the fambly do-gooder...
       - Character: 2
         Text: These here folks don' even know the stuff's gone.
       - Character: 2
-        Text: '"Sheriff Sir"'
+        Text: '"Sheriff Sir".'
       - Character: 1
         Text: You may be my brother but you're not above the law. Come along now!
       - Character: 2
@@ -47,8 +47,6 @@ MonoBehaviour:
         Text: This pains me a great deal but you've had plenty of chances already.
       - Character: 1
         Text: Let's go.
-      - Character: 0
-        Text: ...
     HangingToBooze:
       Dialog:
       - Character: 2
@@ -66,7 +64,7 @@ MonoBehaviour:
         Text: I dunno what I'd have done without you, brother!
       - Character: 0
         Text: ...
-      - Character: 0
+      - Character: 2
         Text: Come on, let's go get some drinks. It's on me!
   - BoozeToLasso:
       Dialog:
@@ -84,8 +82,6 @@ MonoBehaviour:
         Text: Off to the gallows we go!
       - Character: 1
         Text: ... again.
-      - Character: 0
-        Text: ...
     HangingToBooze:
       Dialog:
       - Character: 0
@@ -114,15 +110,9 @@ MonoBehaviour:
     LassoToHanging:
       Dialog:
       - Character: 1
-        Text: Tuco...
+        Text: Tuco, you know the deal.
       - Character: 1
-        Text: Put your drawers on, and take your gun off.
-      - Character: 2
-        Text: Real cowboys never run, they just ride away.
-      - Character: 1
-        Text: Without a horse?
-      - Character: 2
-        Text: ...
+        Text: This time you're a goner.
     HangingToBooze:
       Dialog:
       - Character: 2
@@ -136,9 +126,15 @@ MonoBehaviour:
   - BoozeToLasso:
       Dialog:
       - Character: 1
-        Text: This town's not big enough for the both of us.
+        Text: Tuco...
+      - Character: 1
+        Text: Put your drawers on, and take your gun off.
       - Character: 2
-        Text: "If it ain\u2019t dirty, it ain\u2019t fun"
+        Text: Real cowboys never run, they just ride away.
+      - Character: 1
+        Text: Without a horse?
+      - Character: 2
+        Text: "If it ain\u2019t dirty, it ain\u2019t fun."
       - Character: 1
         Text: ...
       - Character: 1
