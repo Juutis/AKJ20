@@ -42,6 +42,11 @@ public class LassoEnemy : MonoBehaviour
         started = Time.time;
         currentSpeed = 0f;
         initialT = 0f;
+
+        float difficulty = GameManager.Instance.GetDifficulty();
+        minSpeed = 1f + 1.5f * difficulty;
+        maxSpeed = 2f + 3f * difficulty;
+        maxSpeedTime = 5f - 2f * difficulty;
     }
 
     // Update is called once per frame

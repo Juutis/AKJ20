@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     
     private int totalLoops = 2;
     private int currentLoop = 0;
+    private float difficulty = 0f;
 
     [SerializeField]
     private GameObject winGameScreen;
@@ -157,9 +159,14 @@ public class GameManager : MonoBehaviour
             currentLoop++;
         }
         FadeIn();
-        var difficulty = (float)currentLoop / (totalLoops - 1); // 0.0 = min difficulty, 1.0 = max difficulty
+        difficulty = (float)currentLoop / (totalLoops - 1); // 0.0 = min difficulty, 1.0 = max difficulty
         HangManManager.Instance.Difficulty = difficulty;
         SceneManager.LoadScene(minigames[sceneIndex].SceneName);
+    }
+
+    public float GetDifficulty()
+    {
+        return difficulty;
     }
 
     private void DisplayWinScreenForMiniGame(MiniGame miniGame)
