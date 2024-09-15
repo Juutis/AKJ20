@@ -52,9 +52,17 @@ public class SaloonBottle : MonoBehaviour
         startPos = transform.position;
         targetPos = target.position;
         moveTimer = 0f;
+        if (SoundManager.main != null)
+        {
+            SoundManager.main.PlaySound(GameSoundType.Bottle);
+        }
     }
     public void Kill()
     {
+        if (SoundManager.main != null)
+        {
+            SoundManager.main.PlaySound(GameSoundType.FallingBottle);
+        }
         isFailing = true;
         animator.Play("bottleFail");
     }

@@ -13,10 +13,18 @@ public class SaloonLasso : MonoBehaviour
     public void Whoop()
     {
         animator.Play("lassoWhoop");
+        if (SoundManager.main != null)
+        {
+            SoundManager.main.PlayLoop(GameSoundType.Whoop);
+        }
     }
 
     public void Stop()
     {
         animator.Play("lassoIdle");
+        if (SoundManager.main != null)
+        {
+            SoundManager.main.StopLoop(GameSoundType.Whoop);
+        }
     }
 }
