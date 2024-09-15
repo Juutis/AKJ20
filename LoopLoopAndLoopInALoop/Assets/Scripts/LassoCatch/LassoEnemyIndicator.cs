@@ -94,7 +94,6 @@ public class LassoEnemyIndicator : MonoBehaviour
             Vector3 right = Camera.main.ViewportToWorldPoint(new(1f, 0f)) + Vector3.right * 0.5f;
             if (enemy.transform.position.x >= right.x)
             {
-                Debug.Log("Enemy: " + enemy.transform.position.x + " Indicator: " + right.x);
                 if (Time.time - startShowWait > showTimeBuffer)
                 {
                     spriteRenderer.enabled = true;
