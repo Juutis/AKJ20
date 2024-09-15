@@ -288,6 +288,7 @@ MonoBehaviour:
   playerCam: {fileID: 499774984}
   distanceText: {fileID: 101190}
   direction: 3
+  canvas: {fileID: 1009265629}
 --- !u!212 &22498777
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -876,6 +877,7 @@ MonoBehaviour:
   playerCam: {fileID: 499774984}
   distanceText: {fileID: 1516113819}
   direction: 1
+  canvas: {fileID: 1009265629}
 --- !u!212 &408590316
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1569,6 +1571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd8ab19c1356864ab25e48bcfb3e33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 1009265629}
 --- !u!212 &610453620
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2918,6 +2921,7 @@ MonoBehaviour:
   playerCam: {fileID: 499774984}
   distanceText: {fileID: 1641190366}
   direction: 0
+  canvas: {fileID: 1009265629}
 --- !u!1 &1498897053
 GameObject:
   m_ObjectHideFlags: 0
@@ -4454,6 +4458,7 @@ MonoBehaviour:
   playerCam: {fileID: 499774984}
   distanceText: {fileID: 1504504006}
   direction: 2
+  canvas: {fileID: 1009265629}
 --- !u!212 &2011091242
 SpriteRenderer:
   m_ObjectHideFlags: 0
