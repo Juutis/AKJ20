@@ -28,11 +28,13 @@ public class LassoEnemy : MonoBehaviour
 
     private EnemyMode mode;
     private Rigidbody2D body;
+    private CircleCollider2D circleCollider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        circleCollider = GetComponent<CircleCollider2D>();
         Initialize();
     }
 
@@ -44,8 +46,10 @@ public class LassoEnemy : MonoBehaviour
         initialT = 0f;
 
         float difficulty = GameManager.Instance.GetDifficulty();
-        minSpeed = 1f + 1.5f * difficulty;
-        maxSpeed = 2f + 3f * difficulty;
+        minSpeed = Mathf.Lerp(1f, 2.5f, difficulty);
+        maxSpeed = Mathf.Lerp(2f, 5f, difficulty);
+        circleCollider.radius = Mathf.Lerp(0.2f, 0.1f, difficulty);
+        maxStrafeSpeed = Mathf.Lerp(1f, 2f, difficulty);
         maxSpeedTime = 5f - 2f * difficulty;
     }
 
@@ -127,8 +131,14 @@ public class LassoEnemy : MonoBehaviour
         if (collision.tag == "Finish")
         {
             Debug.Log("Caught!");
-            UnityEditor.EditorApplication.isPlaying = false;
+            // UnityEditor.EditorApplication.isPlaying = false;
+            Invoke("Win", 0.5f);
         }
+    }
+
+    private void Win()
+    {
+        GameManager.Instance.LoadNextLevel();
     }
 
     enum EnemyMode
