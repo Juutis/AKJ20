@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private MiniGame[] minigames;
 
-    private int sceneIndex = 0;
+    private int sceneIndex = -1;
     
     private int totalLoops = 5;
     private int currentLoop = 0;
@@ -135,17 +135,7 @@ public class GameManager : MonoBehaviour
 
     void DisplayWinScreen()
     {
-        var prevScene = sceneIndex;
-        sceneIndex++;
-        if (sceneIndex >= minigames.Count()) {
-            sceneIndex = 0;
-            currentLoop++;
-            if (currentLoop >= totalLoops) {
-                winGameScreen.SetActive(true);
-                return;
-            }
-        }
-        DisplayWinScreenForMiniGame(minigames[prevScene]);
+        DisplayWinScreenForMiniGame(minigames[sceneIndex]);
         winScreenActive = true;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -182,6 +172,15 @@ public class GameManager : MonoBehaviour
     }
 
     void GoToNextLevel() {
+        sceneIndex++;
+        if (sceneIndex >= minigames.Count()) {
+            sceneIndex = 0;
+            currentLoop++;
+            if (currentLoop >= totalLoops) {
+                winGameScreen.SetActive(true);
+                return;
+            }
+        }
         dialoguePanel.SetActive(false);
         HideWinScreen();
         FadeIn();
