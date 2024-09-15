@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
             lassoPower = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && (Time.time - lastBoostCooldown > boostCooldown))
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && (Time.time - lastBoostCooldown > boostCooldown))
         {
             if (boosts < maxBoosts)
             {
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyDown(KeyCode.S) && (Time.time - lastBoostCooldown > boostCooldown))
+        else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && (Time.time - lastBoostCooldown > boostCooldown))
         {
             speed = Mathf.Max(minSpeed, speed - boostSpeedup);
             lastBoostCooldown = Time.time;
