@@ -21,7 +21,7 @@ public class SaloonManager : MonoBehaviour
 
     [SerializeField]
     private int bottlesToSpawn = 20;
-    private int spawnDifficultyFactor = 20;
+    private int spawnDifficultyFactor = 10;
 
     private List<SaloonBottleSlot> slots = new();
 
@@ -31,7 +31,7 @@ public class SaloonManager : MonoBehaviour
     [SerializeField]
     private float spawnIntervalMin = 2f;
     private float spawnInterval = 0f;
-    private float spawnIntervalDifficultyFactor = 2f;
+    private float spawnIntervalDifficultyFactor = 1f;
 
     [SerializeField]
     private Transform bottleContainer;
@@ -52,7 +52,7 @@ public class SaloonManager : MonoBehaviour
     private int bottlesDied = 0;
 
     private bool isSpawning = false;
-    private float difficulty = 0f;
+    private float difficulty = 1f;
 
     [SerializeField]
     private Transform bottleCountContainer;

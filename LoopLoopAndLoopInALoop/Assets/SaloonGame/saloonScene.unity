@@ -415,7 +415,7 @@ MonoBehaviour:
   bottleCountPrefab: {fileID: 282311118073364760, guid: 2e3ff066090fd254c9c02ab50fcbf2c1, type: 3}
   bottleCountDeadPrefab: {fileID: 282311118073364760, guid: 830aaea0f3f1fbf44a09db7d2103e835, type: 3}
   slotPrefab: {fileID: 2973773727198938837, guid: 57b8b586316824e4fb9d1a9d5a42c15c, type: 3}
-  bottlesToSpawn: 40
+  bottlesToSpawn: 20
   spawnIntervalMax: 4
   spawnIntervalMin: 1
   bottleContainer: {fileID: 1193732785}
