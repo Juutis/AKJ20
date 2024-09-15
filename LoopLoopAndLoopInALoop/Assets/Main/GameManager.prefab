@@ -525,6 +525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curtains: {fileID: 3316092298966806061}
   minigames:
+  - SceneName: LassoCatch
+    WinScreen: 2
   - SceneName: hangman
     WinScreen: 0
   winGameScreen: {fileID: 2772108307068840727}

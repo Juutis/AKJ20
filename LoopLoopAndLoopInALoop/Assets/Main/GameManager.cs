@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour
 
     void DisplayWinScreen()
     {
+        var prevScene = sceneIndex;
         sceneIndex++;
         if (sceneIndex >= minigames.Count()) {
             sceneIndex = 0;
@@ -144,7 +145,7 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
-        DisplayWinScreenForMiniGame(minigames[sceneIndex]);
+        DisplayWinScreenForMiniGame(minigames[prevScene]);
         winScreenActive = true;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
