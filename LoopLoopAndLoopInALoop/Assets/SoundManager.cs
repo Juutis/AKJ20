@@ -92,7 +92,8 @@ public enum GameSoundType
     Horse,
     Shoot,
     Whoop,
-    Throw
+    Throw,
+    Die
 }
 
 

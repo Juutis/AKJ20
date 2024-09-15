@@ -80,6 +80,10 @@ public class HangingMan : MonoBehaviour
             rope.GetComponent<Rigidbody2D>().simulated = true;
             inActive = true;
             rope.color = ropeOrigColor;
+            if (SoundManager.main != null)
+            {
+                SoundManager.main.PlaySound(GameSoundType.Die);
+            }
             Invoke("Lose", 3.0f);
         }
 
