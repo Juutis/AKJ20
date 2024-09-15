@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2c6392d597cce0944bc59dfb5156f11f
+guid: 4d7be0ccb24aebd478fb9ef129785b3e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5732616100015247969
-    second: palette_0
+      213: -827323011857583631
+    second: loophappy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: palette_0
+      name: loophappy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 192
-        height: 32
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9de7ec9708a170b0800000000000000
-      internalID: -5732616100015247969
+      spriteID: 1f1f8b3aa12c484f0800000000000000
+      internalID: -827323011857583631
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      palette_0: -5732616100015247969
+      loophappy_0: -827323011857583631
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

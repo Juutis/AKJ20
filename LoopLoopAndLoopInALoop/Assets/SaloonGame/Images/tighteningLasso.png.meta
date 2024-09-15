@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 2c6392d597cce0944bc59dfb5156f11f
+guid: 9986875c471403b448d175178c1d020c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5732616100015247969
-    second: palette_0
+      213: 8703876055076536491
+    second: tighteningLasso_0
+  - first:
+      213: -6537882688910817666
+    second: tighteningLasso_1
+  - first:
+      213: -5271127273987113901
+    second: tighteningLasso_2
+  - first:
+      213: -6729782894319635114
+    second: tighteningLasso_3
+  - first:
+      213: -5855808071752091794
+    second: tighteningLasso_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: palette_0
+      name: tighteningLasso_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 192
-        height: 32
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +153,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9de7ec9708a170b0800000000000000
-      internalID: -5732616100015247969
+      spriteID: ba08ddf28216ac870800000000000000
+      internalID: 8703876055076536491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tighteningLasso_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e768b486556c445a0800000000000000
+      internalID: -6537882688910817666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tighteningLasso_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35cff140ca139d6b0800000000000000
+      internalID: -5271127273987113901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tighteningLasso_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 655f3901d120b92a0800000000000000
+      internalID: -6729782894319635114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tighteningLasso_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67f95a859dfbbea0800000000000000
+      internalID: -5855808071752091794
       vertices: []
       indices: 
       edges: []
@@ -151,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0a4b62ebaf3776b48ab7baae0bef0fb5
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      palette_0: -5732616100015247969
+      tighteningLasso_0: 8703876055076536491
+      tighteningLasso_1: -6537882688910817666
+      tighteningLasso_2: -5271127273987113901
+      tighteningLasso_3: -6729782894319635114
+      tighteningLasso_4: -5855808071752091794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
