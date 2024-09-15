@@ -2,19 +2,11 @@ using UnityEngine;
 
 public class HangManTutorial : MonoBehaviour
 {
-    void Awake()
+    void Start()
     {
-        HangManTutorial[] objs = FindObjectsByType<HangManTutorial>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-
-        if (objs.Length > 1)
+        if (!HangManManager.Instance.ShowTutorial)
         {
-            foreach (HangManTutorial obj in objs)
-            {
-                obj.gameObject.SetActive(false);
-            }
             Destroy(gameObject);
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 }

@@ -21,7 +21,7 @@ public class SaloonAimIndicator : MonoBehaviour
     private float noiseSpeedFactor = 5;
     private float noiseSpeed = 2;
 
-    private float difficultyModifier = 15;
+    private float difficultyModifier = 5;
     private float difficultyFactor = 0;
 
     [SerializeField]

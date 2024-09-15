@@ -55,8 +55,6 @@ public class SaloonThrownLasso : MonoBehaviour
     {
         float modifier = 0.5f;
         duration -= modifier * difficulty;
-        holdDuration -= modifier * difficulty;
-        maxDistance -= modifier * difficulty;
     }
 
     public void ResetRope()

@@ -34,7 +34,7 @@ public class SaloonPlayer : MonoBehaviour
 
     private bool isAiming = false;
     private bool isLassoing = false;
-    private float difficulty = 0f;
+    private float difficulty = 1f;
     public Transform AimTransform { get { return aimIndicator.MovingTransform; } }
     void Start()
     {

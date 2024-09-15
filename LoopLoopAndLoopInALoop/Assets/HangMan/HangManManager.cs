@@ -3,6 +3,7 @@ using UnityEngine;
 public class HangManManager : MonoBehaviour
 {
     public static HangManManager Instance;
+    public bool ShowTutorial = true;
 
     public float Difficulty {
         get {
@@ -18,10 +19,16 @@ public class HangManManager : MonoBehaviour
     void Awake()
     {
         if (Instance != null) {
+            Instance.ShowTutorial = false;
             Destroy(gameObject);
             return;
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        Difficulty = GameManager.Instance.GetDifficulty();
     }
 }
