@@ -67,6 +67,7 @@ public class HangingMan : MonoBehaviour
             anim.Play(dieAnim);
             inActive = true;
             rope.color = ropeOrigColor;
+            Invoke("Lose", 3.0f);
         }
 
         if (ropeIndicator && !inActive) {
@@ -102,5 +103,9 @@ public class HangingMan : MonoBehaviour
 
     public void Win() {
         GameManager.Instance.LoadNextLevel();
+    }
+
+    public void Lose() {
+        GameManager.Instance.Lose();
     }
 }

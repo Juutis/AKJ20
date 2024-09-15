@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     private int sceneIndex = 0;
     
-    private int totalLoops = 5;
+    private int totalLoops = 2;
     private int currentLoop = 0;
 
     [SerializeField]
@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject boozeScreen;
+
+    [SerializeField]
+    private GameObject loseScreen;
 
     private bool winScreenActive;
 
@@ -81,6 +84,12 @@ public class GameManager : MonoBehaviour
         Invoke("DisplayWinScreen", fadeDuration);
     }
 
+    public void Lose()
+    {
+        FadeOut();
+        Invoke("DisplayLoseScreen", fadeDuration);
+    }
+
     public void FadeOut()
     {
         fadeOutTimer = Time.time + fadeDuration;
@@ -99,6 +108,8 @@ public class GameManager : MonoBehaviour
         }
         DisplayWinScreenForMiniGame(minigames[sceneIndex]);
         winScreenActive = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     void HideWinScreen()
@@ -109,6 +120,21 @@ public class GameManager : MonoBehaviour
             winScreen.SetActive(false);
         }
         winScreenActive = false;
+    }
+
+    void DisplayLoseScreen()
+    {
+        loseScreen.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
+
+    public void RestartDay() 
+    {
+        loseScreen.SetActive(false);
+        sceneIndex = 0;
+        FadeIn();
+        SceneManager.LoadScene(minigames[sceneIndex].SceneName);
     }
 
     void GoToNextLevel() {
