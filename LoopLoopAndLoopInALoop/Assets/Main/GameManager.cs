@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     private MiniGame[] minigames;
 
     private int sceneIndex = -1;
-    
+
     private int totalLoops = 5;
     private int currentLoop = 0;
     private float difficulty = 0f;
@@ -56,7 +56,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null) {
+        if (Instance != null)
+        {
             Destroy(gameObject);
             return;
         }
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
         dialogueRunner = GetComponentInChildren<DialogueRunner>();
         FadeIn();
         dialogueRunner.ShowDialogue(levelTransitions.InitialDialogue);
+        MusicPlayer.main.PlayMusic(MusicType.MainMenu);
     }
 
     void Update()
@@ -140,6 +142,7 @@ public class GameManager : MonoBehaviour
     void DisplayWinScreen()
     {
         SceneManager.LoadScene("main");
+        MusicPlayer.main.PlayMusic(MusicType.MainMenu);
         DisplayWinScreenForMiniGame(minigames[sceneIndex]);
         winScreenActive = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -164,7 +167,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void RestartDay() 
+    public void RestartDay()
     {
         loseScreen.SetActive(false);
         sceneIndex = 0;
@@ -177,18 +180,21 @@ public class GameManager : MonoBehaviour
         GoToNextLevel();
     }
 
-    void GoToNextLevel() {
+    void GoToNextLevel()
+    {
         dialoguePanel.SetActive(false);
         sceneIndex++;
-        if (sceneIndex >= minigames.Count()) {
+        if (sceneIndex >= minigames.Count())
+        {
             sceneIndex = 0;
             currentLoop++;
-            if (currentLoop >= totalLoops) {
+            if (currentLoop >= totalLoops)
+            {
                 winGameScreen.SetActive(true);
                 return;
             }
         }
-        dayIndicator.SetText("Day " + (currentLoop+1) + " / " + totalLoops);
+        dayIndicator.SetText("Day " + (currentLoop + 1) + " / " + totalLoops);
         HideWinScreen();
         FadeIn();
         difficulty = (float)currentLoop / (totalLoops); // 0.0 = min difficulty, 1.0 = max difficulty

@@ -94,6 +94,10 @@ public class HangingManGun : MonoBehaviour
                     hMan.Free();
                 }
                 birbs.SetActive(true);
+                if (SoundManager.main != null)
+                {
+                    SoundManager.main.PlaySound(GameSoundType.Shoot);
+                }
             }
         }
     }

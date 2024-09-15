@@ -58,6 +58,7 @@ public class SaloonManager : MonoBehaviour
     private Transform bottleCountContainer;
     private void Start()
     {
+        MusicPlayer.main.PlayMusic(MusicType.Saloon);
         if (GameManager.Instance != null)
         {
             difficulty = GameManager.Instance.GetDifficulty();

@@ -36,6 +36,7 @@ public class LassoEnemy : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        MusicPlayer.main.PlayMusic(MusicType.Chase);
         body = GetComponent<Rigidbody2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         Initialize();

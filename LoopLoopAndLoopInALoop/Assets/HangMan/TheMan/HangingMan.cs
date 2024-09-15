@@ -30,11 +30,12 @@ public class HangingMan : MonoBehaviour
     [SerializeField]
     private Color ropeIndicatorColor;
     private Color ropeOrigColor;
-    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        MusicPlayer.main.PlayMusic(MusicType.Hangman);
         anim = GetComponent<Animator>();
         Invoke("RandomizeHeading", 3.0f);
         ropeOrigColor = rope.color;
@@ -59,10 +60,12 @@ public class HangingMan : MonoBehaviour
         var time = (balance + 1) / 2.0f;
         anim.SetFloat("time", time);
 
-        if (Mathf.Abs(balance) < 0.99f) {
+        if (Mathf.Abs(balance) < 0.99f)
+        {
             failTimer = Time.time;
         }
-        if (Time.time - failTimer > 0.3f) {
+        if (Time.time - failTimer > 0.3f)
+        {
             var dieAnim = balance > 0 ? "die_right" : "die_left";
             anim.Play(dieAnim);
             inActive = true;
@@ -70,21 +73,24 @@ public class HangingMan : MonoBehaviour
             Invoke("Lose", 3.0f);
         }
 
-        if (ropeIndicator && !inActive) {
+        if (ropeIndicator && !inActive)
+        {
             var ct = Mathf.Sin((Time.time - ropeIndicatorTimer) * 5.0f);
             var c = Color.Lerp(ropeOrigColor, ropeIndicatorColor, ct);
             rope.color = c;
         }
     }
 
-    public void RandomizeHeading() {
+    public void RandomizeHeading()
+    {
         lastHeading = currentHeading;
         targetHeading = Random.Range(-1.0f, 1.0f) * Mathf.Lerp(1.0f, 5.0f, HangManManager.Instance.Difficulty);
         headingTimer = Time.time;
         Invoke("RandomizeHeading", Random.Range(0.6f, 1.0f) * Mathf.Lerp(0.4f, 0.2f, HangManManager.Instance.Difficulty));
     }
 
-    public void Free() {
+    public void Free()
+    {
         if (inActive) return;
         ropeGone.Play();
         rope.enabled = false;
@@ -96,16 +102,19 @@ public class HangingMan : MonoBehaviour
         Invoke("Win", 3.0f);
     }
 
-    public void ShowRopeIndicator() {
+    public void ShowRopeIndicator()
+    {
         ropeIndicator = true;
         ropeIndicatorTimer = Time.time;
     }
 
-    public void Win() {
+    public void Win()
+    {
         GameManager.Instance.LoadNextLevel();
     }
 
-    public void Lose() {
+    public void Lose()
+    {
         GameManager.Instance.Lose();
     }
 }

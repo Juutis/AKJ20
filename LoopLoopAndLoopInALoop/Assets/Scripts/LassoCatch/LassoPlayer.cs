@@ -84,6 +84,10 @@ public class Player : MonoBehaviour
                 boosts++;
                 speed = Mathf.Min(maxSpeed, speed + boostSpeedup);
                 lastBoostCooldown = Time.time;
+                if (SoundManager.main != null)
+                {
+                    SoundManager.main.PlaySound(GameSoundType.Horse);
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.S) && (Time.time - lastBoostCooldown > boostCooldown))
