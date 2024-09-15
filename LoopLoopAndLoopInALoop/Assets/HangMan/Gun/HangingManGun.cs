@@ -90,7 +90,7 @@ public class HangingManGun : MonoBehaviour
                 var newBoom = Instantiate(boom);
                 newBoom.transform.position = shootTarget.position;
                 var hit = Physics2D.Raycast(shootTarget.position, Vector2.zero, Mathf.Infinity, ropeLayerMask);
-                if (hit.collider != null) {
+                if (hit.rigidbody != null) {
                     hMan.Free();
                 }
                 birbs.SetActive(true);
