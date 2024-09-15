@@ -286,7 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 610453618}
   playerCam: {fileID: 499774984}
-  distanceText: {fileID: 0}
+  distanceText: {fileID: 101190}
   direction: 3
 --- !u!212 &22498777
 SpriteRenderer:
@@ -874,7 +874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 610453618}
   playerCam: {fileID: 499774984}
-  distanceText: {fileID: 0}
+  distanceText: {fileID: 1516113819}
   direction: 1
 --- !u!212 &408590316
 SpriteRenderer:
@@ -2916,7 +2916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 610453618}
   playerCam: {fileID: 499774984}
-  distanceText: {fileID: 1641190364}
+  distanceText: {fileID: 1641190366}
   direction: 0
 --- !u!1 &1498897053
 GameObject:
@@ -4452,7 +4452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 610453618}
   playerCam: {fileID: 499774984}
-  distanceText: {fileID: 0}
+  distanceText: {fileID: 1504504006}
   direction: 2
 --- !u!212 &2011091242
 SpriteRenderer:
