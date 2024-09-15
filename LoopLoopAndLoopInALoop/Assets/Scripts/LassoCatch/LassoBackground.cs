@@ -13,9 +13,9 @@ public class Background : MonoBehaviour
     {
         for(int x = -100; x < 100; x++)
         {
-            for (int y = -100; y < 100; y++)
+            for (int y = -10; y < 1000; y++)
             {
-                int prefabIndex = Random.Range(0, 2);
+                int prefabIndex = Random.Range(0, prefabs.Count);
                 GameObject obj = Instantiate(prefabs[prefabIndex]);
                 obj.transform.position = new Vector3(x, y, 0);
                 bgTiles.Add(obj);

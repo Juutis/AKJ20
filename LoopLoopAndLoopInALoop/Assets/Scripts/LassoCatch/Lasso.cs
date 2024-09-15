@@ -17,6 +17,8 @@ public class Lasso : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private LineRenderer lineRenderer;
+    private CircleCollider2D circleCollider;
+
     private float lassoPower = 0f;
     private LassoMode mode = LassoMode.None;
     private float prepareT = 0f;
@@ -30,6 +32,8 @@ public class Lasso : MonoBehaviour
         spriteRenderer.enabled = false;
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
+        circleCollider = GetComponent<CircleCollider2D>();
+        circleCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -87,6 +91,7 @@ public class Lasso : MonoBehaviour
         }
 
         lineRenderer.enabled = LassoMode.None != mode;
+        circleCollider.enabled = LassoMode.Throw == mode;
 
         if (LassoMode.None != mode)
         {
@@ -135,7 +140,12 @@ public class Lasso : MonoBehaviour
         return dist;
     }
 
-    enum LassoMode
+    public LassoMode GetMode()
+    {
+        return mode;
+    }
+
+    public enum LassoMode
     {
         None,
         Spin,

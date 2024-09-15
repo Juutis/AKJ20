@@ -19,14 +19,14 @@ public class Player : MonoBehaviour
     private float lassoPower = 0f;
     private List<Vector3> lassoIndicatorNodes = new();
     private float speed = 0f;
-    private float maxSpeed;
-    private float boostSpeedup = 20f;
+    private float maxSpeed = 5f;
+    private float minSpeed = 0f;
+    private float boostSpeedup = 0.33333f;
     private float dir;
     private int boosts = 0;
     private int maxBoosts = 3;
-    private float boostStackCooldown = 5f;
+    private float boostStackCooldown = 3f;
     private float lastBoostStackCooldown = 0f;
-    private float rotateSpeed = 15f;
     private float horizontal;
     private float boostCooldown = 1f;
     private float lastBoostCooldown = 0f;
@@ -40,13 +40,20 @@ public class Player : MonoBehaviour
         {
             lassoIndicatorNodes.Add(lassoIndicator.GetPosition(i));
         }
+
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        speed = minSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        dir -= horizontal * Time.deltaTime * rotateSpeed;
+        //dir -= horizontal * Time.deltaTime * rotateSpeed;
         //body.MoveRotation(dir);
 
         if (Input.GetMouseButton(0))
@@ -63,19 +70,23 @@ public class Player : MonoBehaviour
             lassoPower = 0;
         }
 
-        Debug.Log(body.linearVelocity  + ", " + transform.rotation.eulerAngles);
         if (Input.GetKeyDown(KeyCode.W) && (Time.time - lastBoostCooldown > boostCooldown))
         {
             //Debug.Log("Pressed w: " + boosts + ", " + speed);
             if (boosts < maxBoosts)
             {
                 boosts++;
-                speed += boostSpeedup;
+                speed = Mathf.Min(maxSpeed, speed + boostSpeedup);
                 lastBoostCooldown = Time.time;
             }
         }
+        else if (Input.GetKeyDown(KeyCode.S) && (Time.time - lastBoostCooldown > boostCooldown))
+        {
+            speed = Mathf.Max(minSpeed, speed - boostSpeedup);
+            lastBoostCooldown = Time.time;
+        }
 
-        if (boosts == 0)
+            if (boosts == 0)
         {
             lastBoostStackCooldown = Time.time;
         }
@@ -101,13 +112,16 @@ public class Player : MonoBehaviour
         }
 
         boostCooldownImage.fillAmount = 1 - (Time.time - lastBoostCooldown) / boostCooldown;
+
+        lassoIndicator.enabled = lasso.GetMode() == Lasso.LassoMode.Spin;
     }
 
     private void FixedUpdate()
     {
-        transform.Rotate(Vector3.forward, -horizontal * Time.deltaTime * rotateSpeed);
+        // transform.Rotate(Vector3.forward, -horizontal * Time.deltaTime * rotateSpeed);
+        
 
-        body.linearVelocity = (transform.rotation * Vector2.up).normalized * speed * Time.deltaTime;// new Vector2(0f, speed) * Time.deltaTime;
+        body.linearVelocity = new Vector2(horizontal, speed);// new Vector2(0f, speed) * Time.deltaTime;
 
     }
 }
