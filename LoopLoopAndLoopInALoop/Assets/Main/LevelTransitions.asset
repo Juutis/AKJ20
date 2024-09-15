@@ -69,15 +69,36 @@ MonoBehaviour:
       - Character: 0
         Text: Come on, let's go get some drinks. It's on me!
   - BoozeToLasso:
-      Dialog: []
+      Dialog:
+      - Character: 1
+        Text: What? I thought I dealt with you already.
+      - Character: 2
+        Text: Ain't that easy getting rid of me, brother!
+      - Character: 2
+        Text: I'm outta here! Ta-ta!
     LassoToHanging:
       Dialog:
+      - Character: 1
+        Text: Didn't occur to you to attempt your escape of the back of a horse,
+          did it?
+      - Character: 1
+        Text: Off to the gallows we go!
+      - Character: 1
+        Text: ... again.
       - Character: 0
-        Text: sadfasdfsaf
+        Text: ...
     HangingToBooze:
       Dialog:
       - Character: 0
-        Text: asd
+        Text: ...
+      - Character: 2
+        Text: You're quite the shot, are ya?
+      - Character: 2
+        Text: Obviously not as good as yours truly, but decent nevertheless.
+      - Character: 0
+        Text: ...
+      - Character: 2
+        Text: Let's go get some drinks!
   - BoozeToLasso:
       Dialog: []
     LassoToHanging:
@@ -106,15 +127,9 @@ MonoBehaviour:
         Text: sadfasdfsaf
     HangingToBooze:
       Dialog:
+      - Character: 2
+        Text: Maybe this drinkin' whisky business ain't for me, after all.
       - Character: 0
-        Text: asd
-  - BoozeToLasso:
-      Dialog: []
-    LassoToHanging:
-      Dialog:
+        Text: ...
       - Character: 0
-        Text: sadfasdfsaf
-    HangingToBooze:
-      Dialog:
-      - Character: 0
-        Text: asd
+        Text: Good.
