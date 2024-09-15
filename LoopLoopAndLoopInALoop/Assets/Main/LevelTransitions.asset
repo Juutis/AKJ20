@@ -27,11 +27,11 @@ MonoBehaviour:
       - Character: 2
         Text: Well grab my legs and slap my horse. If it isn' the fambly do-gooder..
       - Character: 2
-        Text: These here folks don' even know it's gone.
+        Text: These here folks don' even know the stuff's gone.
       - Character: 2
         Text: '"Sheriff Sir"'
       - Character: 1
-        Text: You may be my brother but you're not above the law. Come along now!!
+        Text: You may be my brother but you're not above the law. Come along now!
       - Character: 2
         Text: You'll have to catch me first!
     LassoToHanging:
@@ -52,7 +52,7 @@ MonoBehaviour:
     HangingToBooze:
       Dialog:
       - Character: 2
-        Text: Whew, you came in the nick of time there, brother!
+        Text: Whew, you came in the nick of time there!
       - Character: 0
         Text: ...
       - Character: 2
@@ -79,8 +79,7 @@ MonoBehaviour:
     LassoToHanging:
       Dialog:
       - Character: 1
-        Text: Didn't occur to you to attempt your escape of the back of a horse,
-          did it?
+        Text: Didn't occur to you to attempt your escape on horseback, did it?
       - Character: 1
         Text: Off to the gallows we go!
       - Character: 1
@@ -92,7 +91,7 @@ MonoBehaviour:
       - Character: 0
         Text: ...
       - Character: 2
-        Text: You're quite the shot, are ya?
+        Text: You're quite the shot, aren't ya?
       - Character: 2
         Text: Obviously not as good as yours truly, but decent nevertheless.
       - Character: 0
@@ -100,31 +99,92 @@ MonoBehaviour:
       - Character: 2
         Text: Let's go get some drinks!
   - BoozeToLasso:
-      Dialog: []
+      Dialog:
+      - Character: 1
+        Text: '*Sigh*'
+      - Character: 2
+        Text: Not you again!
+      - Character: 2
+        Text: At least this time I left my horse just outside. Ha-ha!
+      - Character: 1
+        Text: The one roaming out back in the fields? You might want to leash him
+          next time.
+      - Character: 2
+        Text: Oh you lead-footed lunk.
     LassoToHanging:
       Dialog:
+      - Character: 1
+        Text: Tuco...
+      - Character: 1
+        Text: Put your drawers on, and take your gun off.
+      - Character: 2
+        Text: Real cowboys never run, they just ride away.
+      - Character: 1
+        Text: Without a horse?
+      - Character: 2
+        Text: ...
+    HangingToBooze:
+      Dialog:
+      - Character: 2
+        Text: Feels like I have my own guardian angel.
+      - Character: 2
+        Text: I could get used to this!
       - Character: 0
-        Text: sadfasdfsaf
+        Text: ...
+      - Character: 2
+        Text: Agreed. Let's go find us some whisky.
+  - BoozeToLasso:
+      Dialog:
+      - Character: 1
+        Text: This town's not big enough for the both of us.
+      - Character: 2
+        Text: "If it ain\u2019t dirty, it ain\u2019t fun"
+      - Character: 1
+        Text: ...
+      - Character: 1
+        Text: What?
+      - Character: 2
+        Text: Hi-ho!
+    LassoToHanging:
+      Dialog:
+      - Character: 1
+        Text: ...
+      - Character: 2
+        Text: ...
+      - Character: 2
+        Text: ...
+      - Character: 1
+        Text: ...
+      - Character: 2
+        Text: ...
+      - Character: 0
+        Text: ...
     HangingToBooze:
       Dialog:
       - Character: 0
-        Text: asd
+        Text: ...
+      - Character: 2
+        Text: ...
+      - Character: 2
+        Text: Time for whisky.
   - BoozeToLasso:
-      Dialog: []
+      Dialog:
+      - Character: 1
+        Text: Tuco, aren't you tired of all the running already?
+      - Character: 1
+        Text: Come peacefully, for once. Please.
+      - Character: 2
+        Text: As much as I'd like that, somebody's gotta make you work for your pay.
+      - Character: 1
+        Text: Here we go again...
     LassoToHanging:
       Dialog:
-      - Character: 0
-        Text: sadfasdfsaf
-    HangingToBooze:
-      Dialog:
-      - Character: 0
-        Text: asd
-  - BoozeToLasso:
-      Dialog: []
-    LassoToHanging:
-      Dialog:
-      - Character: 0
-        Text: sadfasdfsaf
+      - Character: 2
+        Text: Aww, rats!
+      - Character: 1
+        Text: You know the deal.
+      - Character: 1
+        Text: Let's go.
     HangingToBooze:
       Dialog:
       - Character: 2
